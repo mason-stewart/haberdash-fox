@@ -23,3 +23,4 @@ gem "quiet_assets", ">= 1.0.1", :group => :development
 gem "activeadmin"
 gem "sass-rails"
 gem "meta_search", ">= 1.1.0.pre"
+gem "etsy"

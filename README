@@ -1,4 +1,19 @@
-RECIPES
+Haberdasher Fox
+========================
+
+This application was generated with the rails_apps_composer gem:
+https://github.com/RailsApps/rails_apps_composer
+provided by the RailsApps Project:
+http://railsapps.github.com/
+
+________________________
+
+Recipes:
 ["controllers", "core", "email", "extras", "frontend", "gems", "git", "init", "models", "prelaunch", "railsapps", "readme", "routes", "setup", "testing", "views"]
-PREFERENCES
-{:git=>true, :railsapps=>"none", :dev_webserver=>"unicorn", :prod_webserver=>"unicorn", :database=>"postgresql", :templates=>"slim", :unit_test=>"rspec", :integration=>"rspec-capybara", :fixtures=>"factory_girl", :frontend=>"bootstrap", :bootstrap=>"sass", :email=>"none", :authentication=>"none", :authorization=>"none", :form_builder=>"simple_form", :starter_app=>"none"}
+
+Preferences:
+{:git=>true, :railsapps=>"none", :dev_webserver=>"unicorn", :prod_webserver=>"unicorn", :database=>"postgresql", :templates=>"slim", :unit_test=>"rspec", :integration=>"rspec-capybara", :fixtures=>"factory_girl", :frontend=>"bootstrap", :bootstrap=>"sass", :email=>"none", :authentication=>"none", :authorization=>"none", :form_builder=>"simple_form", :starter_app=>"none", :quiet_assets=>true, :ban_spiders=>true}
+
+________________________
+
+License

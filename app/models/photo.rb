@@ -1,5 +1,5 @@
 class Photo < ActiveRecord::Base
-  attr_accessible :attrs, :item_id
+  attr_accessible :attrs, :item_id, :visible
 
   serialize :attrs
 

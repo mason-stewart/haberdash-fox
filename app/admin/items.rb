@@ -43,6 +43,7 @@ ActiveAdmin.register Item do
       # custom input class above
       f.has_many :photos do |j|
         j.input :visible, :as => :check_box_images,
+                          :label => 'Visible?',
                           :image => proc { |photo| photo.attrs['url_75x75'] }
       end
     end

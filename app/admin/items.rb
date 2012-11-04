@@ -41,7 +41,7 @@ ActiveAdmin.register Item do
 
   index :download_links => false, :as => :grid, :columns => 3 do |item|
     a :href => admin_item_path(item),
-      :style => "background-image: url(#{item.photos.first.attrs['url_fullxfull']});",
+      :style => "background-image: url(#{item.photos.where(:visible => true).first.attrs['url_fullxfull']});",
       :class => 'grid-link'
     div :class => 'grid-bg'
       h5 "#{item.title}", :class => 'grid-info', :style => 'top: 15px; font-size: 22px;'

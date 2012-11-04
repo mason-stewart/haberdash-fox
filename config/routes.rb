@@ -3,4 +3,6 @@ HaberdasherFox::Application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
 
+  get '/' => 'collection#index'
+  get '/collection/:slug' => 'collection#show'
 end

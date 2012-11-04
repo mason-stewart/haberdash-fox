@@ -1,0 +1,4 @@
+h1 = @collection.title
+.item-grid
+  - @collection.items.each do |item|
+    .item style="background-image: url(#{item.photos.where(:visible => true).first.attrs['url_fullxfull']});"

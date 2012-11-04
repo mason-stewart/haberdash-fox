@@ -1,25 +1,26 @@
-doctype
+doctype html
 html
   head
     meta content="width=(device-width,)initial-scale=1.0" name="viewport"
-      title= content_for?(:title) ? yield(:title) : "Haberdasher Fox"
-      meta content=(content_for?(:description) ? yield(:description) :)"Haberdasher Fox" name="description"
-        = stylesheet_link_tag "application", :media => "all"
-        = javascript_include_tag "application"
-        = csrf_meta_tags
-        = yield(:head)
+    title= content_for?(:title) ? yield(:title) : "Haberdasher Fox"
+    = stylesheet_link_tag "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+    = yield(:head)
+    script type="text/javascript" src="//use.typekit.net/ask0gfq.js"
+    javascript:
+      try{Typekit.load();}catch(e){}
+
   body
-    header.navbar.navbar-fixed-top
-      nav.navbar-inner
-        .container
-          = render 'layouts/navigation'
-    #main role="main"
-      .container
-        .content
-          .row
-            .span12
-              = render 'layouts/messages'
-              = yield
-          footer
-      /! ! end of .container
-    /! ! end of #main
+    .top-bar
+      .top-bar-content
+        | A Collection Of The Best Menswares On Etsy
+    #main
+      .container.main
+        .row
+          .sidebar
+            = render 'layouts/navigation'
+          .content
+            = yield
+
+        footer

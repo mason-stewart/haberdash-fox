@@ -1,1 +1,9 @@
-= link_to "Haberdasher Fox", root_path, :class => 'brand'
+= link_to(image_tag('sidebar.logo.gif'), '/')
+
+ul.nav-list
+  li
+    = link_to(image_tag('icon.home.gif'), '/')
+  - @collections.each do |collection|
+    li
+      = link_to collection.title, '/collection/'+collection.slug
+

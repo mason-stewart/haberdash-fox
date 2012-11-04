@@ -1,0 +1,17 @@
+// Place all the styles related to the Item controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.item-grid {
+  padding: 7px;
+
+  .item {
+    width: 320px;
+    height: 320px;
+    background-size: cover;
+    background-position: 50% 50%;
+    float: left;
+    margin: 7px;
+  }
+}

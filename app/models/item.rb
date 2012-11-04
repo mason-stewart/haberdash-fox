@@ -13,7 +13,7 @@ class Item < ActiveRecord::Base
 
   def save_photos
     @item.images.each do |image|
-      self.photos.create(:attrs => image.result)
+      self.photos.create(:attrs => image.result, :visible => true)
     end
   end
 

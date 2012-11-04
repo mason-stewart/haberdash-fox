@@ -24,4 +24,3 @@ gem "activeadmin"
 gem "sass-rails"
 gem "meta_search", ">= 1.1.0.pre"
 gem "etsy"
-gem 'activerecord-postgres-array'

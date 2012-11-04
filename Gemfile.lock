@@ -34,8 +34,6 @@ GEM
       activesupport (= 3.2.8)
       arel (~> 3.0.2)
       tzinfo (~> 0.3.29)
-    activerecord-postgres-array (0.0.8)
-      activerecord
     activeresource (3.2.8)
       activemodel (= 3.2.8)
       activesupport (= 3.2.8)
@@ -228,7 +226,6 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin
-  activerecord-postgres-array
   bootstrap-sass (>= 2.1.0.0)
   capybara (>= 1.1.2)
   coffee-rails (~> 3.2.1)

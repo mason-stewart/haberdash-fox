@@ -32,9 +32,30 @@ end
 
 ActiveAdmin.register Item do
 
+  # DO actually show the New button on the Show view
+  action_item :only => :show do
+    if controller.action_methods.include?('new')
+      link_to(I18n.t('active_admin.new_model', :model => active_admin_config.resource_label), new_resource_path)
+    end
+  end
+
+  index :download_links => false, :as => :grid, :columns => 3 do |item|
+    a :href => admin_item_path(item),
+      :style => "background-image: url(#{item.photos.first.attrs['url_fullxfull']});",
+      :class => 'grid-link'
+    div :class => 'grid-bg'
+      h5 "#{item.title}", :class => 'grid-info', :style => 'top: 15px; font-size: 22px;'
+      h5 "$#{item.price}", :class => 'grid-info', :style => 'top: 80px; font-size: 30px;'
+      h5 'Collection', :class => 'grid-info', :style => 'top: 130px;'
+      h5 "#{item.collection.nil? ? 'None' : item.collection.title}",
+         :class => 'grid-info',
+         :style => 'top: 150px; font-size: 22px;'
+  end
+
   form do |f|
     f.inputs "Item Details" do
-      f.input :etsy_id, :label => 'Etsy Item ID'
+      f.input :etsy_id, :label => 'Etsy ID'
+      f.input :collection
       f.input :title
       f.input :description
       f.input :price

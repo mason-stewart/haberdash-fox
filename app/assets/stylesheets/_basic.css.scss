@@ -1,3 +1,5 @@
+@import "compass/utilities/general/clearfix";
+
 $sidebar_width: 329px;
 $content_width: 1060px;
 $container_width: $content_width + $sidebar_width;
@@ -56,14 +58,16 @@ h1 {
 }
 
 .container.main {
+  @include clearfix;
+  position: relative;
   width: $container_width;
 }
 
 .sidebar {
   position: absolute;
   width: $sidebar_width;
-  top: 40px;
-  bottom: -40px;
+  top: 0;
+  bottom: 0;
   background: image_url('sidebar.bg.gif') repeat top left;
 
   .nav-list {

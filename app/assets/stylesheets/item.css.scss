@@ -2,9 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import "compass/utilities/general/clearfix";
 
 .item-grid {
-  padding: 7px;
+  @include clearfix;
+  padding: 7px 20px;
 
   .item {
     width: 320px;

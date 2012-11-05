@@ -17,10 +17,9 @@ html
         | A Collection Of The Best Menswares On Etsy
     #main
       .container.main
-        .row
-          .sidebar
-            = render 'layouts/navigation'
-          .content
-            = yield
+        .sidebar
+          = render 'layouts/navigation'
+        .content
+          = yield
 
         footer

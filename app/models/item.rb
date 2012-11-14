@@ -9,6 +9,7 @@ class Item < ActiveRecord::Base
     self.price = @item.price
     self.url = @item.url
     self.etsy_id = @item.id
+    self.slug = @item.title.gsub(/[^0-9a-z ]/i, '').gsub(/ /,'-').downcase
   end
 
   def save_photos
@@ -18,7 +19,7 @@ class Item < ActiveRecord::Base
   end
 
 
-  attr_accessible :description, :price, :title, :url, :etsy_id, :collection_id, :photos_attributes
+  attr_accessible :description, :price, :title, :url, :etsy_id, :collection_id, :photos_attributes, :slug
 
   validates :etsy_id, :presence => true
   validates :etsy_id, :uniqueness => true

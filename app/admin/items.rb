@@ -57,6 +57,7 @@ ActiveAdmin.register Item do
       f.input :etsy_id, :label => 'Etsy ID'
       f.input :collection
       f.input :title
+      f.input :slug
       f.input :description
       f.input :price
       f.input :url
@@ -75,6 +76,7 @@ ActiveAdmin.register Item do
     attributes_table do
       row :etsy_id
       row :title
+      row :slug
       row :description
       row :price
       row :photos do

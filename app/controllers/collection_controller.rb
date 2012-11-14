@@ -11,7 +11,7 @@ class CollectionController < ApplicationController
     render :show
   end
 
-  # GET /:site
+  # GET /:collection
   def show
     @collection = Collection.find_last_by_slug params[:slug]
     render :show

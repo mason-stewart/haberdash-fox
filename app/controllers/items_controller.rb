@@ -5,7 +5,7 @@ class ItemsController < ApplicationController
     @collections = Collection.all
   end
 
-  # GET /:item
+  # GET /items/:slug
   def show
     @item = Item.find_last_by_slug params[:slug]
     render :show

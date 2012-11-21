@@ -15,6 +15,13 @@
     background-position: 50% 50%;
     float: left;
     margin: 7px;
+
+    &:hover {
+      .info {
+        display: block;
+      }
+    }
+
   }
 }
 
@@ -22,7 +29,8 @@
   width: 570px;
   margin-left: auto;
   margin-right: auto;
-
+  top: 50px;
+  position: relative;
   .photos {
     width: 570px;
     margin-bottom: 30px;
@@ -33,4 +41,51 @@
   font-size: 15px;
   line-height: 22px;
   font-weight: 300;
+}
+
+.meta {
+  margin-right: auto;
+  margin-left: auto;
+  width: 260px;
+}
+
+.price {
+  font-size: 34px;
+  font-weight: 600;
+  margin-right: 20px;
+  float: left;
+  padding-top: 5px;
+}
+
+.purchase {
+  padding: 12px 22px 10px 22px;
+  border-radius: 5px;
+  background: #c59d5e;
+  color: #fff;
+  display: inline-block;
+  float: right;
+}
+
+.info {
+  background: rgba(197, 157, 94, 0.8);
+  height: 280px;
+  width: 250px;
+  padding: 40px 35px 0px 35px;
+  position: relative;
+  display: none;
+
+  .name {
+    font-size: 22px;
+    font-weight: 400;
+    color: #fff;
+  }
+
+  .hover-price {
+    color: #fff;
+    font-size: 30px;
+    position: absolute;
+    bottom: 15px;
+    font-weight: 600;
+    right: 35px;
+  }
 }

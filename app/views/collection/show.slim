@@ -3,3 +3,6 @@ h1 = @collection.title
   - @collection.items.each do |item|
     a href="/items/#{item.slug}"
       .item style="background-image: url(#{item.photos.where(:visible => true).first.attrs['url_fullxfull']});"
+        .info 
+          .name = item.title
+          .hover-price $#{item.price}

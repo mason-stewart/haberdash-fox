@@ -1,8 +1,8 @@
 .back = @collection
 h2 = @item.title
 .meta
-  .price = @item.price
-  .purchase Purchase on Etsy
+  .price $#{@item.price}
+  a href="#{@item.url}" class="purchase" target="_blank" Purchase on Etsy
 .detail
   img class="photos" src="#{@item.photos.where(:visible => true).first.attrs['url_fullxfull']}"
   

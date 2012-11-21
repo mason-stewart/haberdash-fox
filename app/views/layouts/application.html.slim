@@ -12,12 +12,13 @@ html
       try{Typekit.load();}catch(e){}
 
   body
-    .top-bar
-      .top-bar-content
-        | A Collection Of The Best Menswares On Etsy
     #main
       .container.main
+      .top-bar
+        .top-bar-content
+          | A Collection Of The Best Menswares On Etsy
         .sidebar
+          img src="/assets/sidebar-top.png"
           = render 'layouts/navigation'
         .content
           = yield

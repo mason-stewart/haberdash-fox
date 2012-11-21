@@ -39,9 +39,15 @@ h1 {
   text-transform: uppercase;
 }
 
+h2 {
+  font-size: 40px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 .top-bar {
   min-width: $container_width;
-  height: 40px;
+  height: 41px;
   background: image_url('topbar.bg.gif') repeat-x top left;
 
   .top-bar-content {
@@ -51,7 +57,7 @@ h1 {
     text-align: center;
     font-size: 18px;
     font-weight: lighter;
-    line-height: 40px;
+    line-height: 44px;
     text-transform: uppercase;
     letter-spacing: 4px;
   }
@@ -60,7 +66,9 @@ h1 {
 .container.main {
   @include clearfix;
   position: relative;
-  width: $container_width;
+  // width: $container_width;
+  width: 99%;
+
 }
 
 .sidebar {
@@ -88,5 +96,6 @@ h1 {
 
 .content {
   margin-left: $sidebar_width;
-  width: $content_width;
+  // width: $content_width;
 }
+

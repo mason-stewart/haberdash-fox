@@ -1,6 +1,8 @@
-h1 = @item.title
-.item-grid
-  .item style="background-image: url(#{@item.photos.where(:visible => true).first.attrs['url_fullxfull']});"
-
-  h2
+h2 = @item.title
+.detail
+  .photos style="background-image: url(#{@item.photos.where(:visible => true).first.attrs['url_fullxfull']});"
+  
+  h3 Oh the details.
+  
+  .description    
     = @item.description

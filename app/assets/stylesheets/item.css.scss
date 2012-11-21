@@ -17,3 +17,20 @@
     margin: 7px;
   }
 }
+
+.detail {
+  width: 570px;
+  margin-left: auto;
+  margin-right: auto;
+
+  .photos {
+    width: 570px;
+    margin-bottom: 30px;
+  }
+}
+
+.description {
+  font-size: 15px;
+  line-height: 22px;
+  font-weight: 300;
+}

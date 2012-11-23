@@ -65,7 +65,7 @@ h2 {
 }
 
 .container.main {
-  @include clearfix;
+  @include pie-clearfix;
   position: relative;
   // width: $container_width;
   width: 99%;
@@ -96,6 +96,7 @@ h2 {
 }
 
 .content {
+  padding-bottom: 200px;
   margin-left: $sidebar_width;
   // width: $content_width;
 }

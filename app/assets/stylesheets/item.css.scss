@@ -98,3 +98,39 @@
     right: 35px;
   }
 }
+
+/* #Media Queries
+================================================== */
+
+  /* Smaller than standard 960 (devices and browsers) */
+  @media only screen and (max-width: 1370px) {
+
+  .item-grid {
+    @include clearfix;
+    padding: 7px 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 670px;
+    }
+  }
+
+  /* Tablet Portrait size to standard 960 (devices and browsers) */
+  @media only screen and (min-width: 780px) and (max-width: 1040px) {
+
+  .item-grid {
+    @include clearfix;
+    padding: 7px 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 334px;
+    }
+  }
+
+  /* All Mobile Sizes (devices and browser) */
+  @media only screen and (max-width: 767px) {}
+
+  /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+  @media only screen and (min-width: 480px) and (max-width: 767px) {}
+
+  /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+  @media only screen and (max-width: 479px) {}

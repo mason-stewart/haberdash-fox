@@ -10,6 +10,7 @@ body {
   -webkit-font-smoothing: antialiased;
   margin: 0;
   color: $slate_color;
+  background-color: #f9f8f6;
 }
 
 a {
@@ -17,7 +18,7 @@ a {
   text-decoration: none;
 
   &:hover {
-    text-decoration: underline;
+    // text-decoration: underline;
   }
 }
 
@@ -37,6 +38,9 @@ h1 {
   font-size: 50px;
   text-align: center;
   text-transform: uppercase;
+  display: block;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 h2 {
@@ -89,8 +93,13 @@ h2 {
       text-align: center;
       list-style-type: none;
       font-size: 18px;
-      font-weight: 700;
+      font-weight: 500;
       text-transform: uppercase;
+      a:hover {
+        color: #b05e27; 
+        font-weight: 700;
+        text-decoration: none;
+      }
     }
   }
 }

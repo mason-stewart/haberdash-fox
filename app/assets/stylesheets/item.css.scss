@@ -14,7 +14,7 @@
     background-size: cover;
     background-position: 50% 50%;
     float: left;
-    margin: 7px;
+    margin: 10px;
 
     &:hover {
       .info {
@@ -103,14 +103,14 @@
 ================================================== */
 
   /* Smaller than standard 960 (devices and browsers) */
-  @media only screen and (max-width: 1370px) {
+  @media only screen and (max-width: 1403px) {
 
   .item-grid {
     @include clearfix;
     padding: 7px 20px;
     margin-left: auto;
     margin-right: auto;
-    width: 670px;
+    width: 680px;
     }
   }
 
@@ -122,7 +122,7 @@
     padding: 7px 20px;
     margin-left: auto;
     margin-right: auto;
-    width: 334px;
+    width: 344px;
     }
   }
 

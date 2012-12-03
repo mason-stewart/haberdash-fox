@@ -80,6 +80,17 @@ h2 {
   width: 320px;
 }
 
+.symbolset {
+  color: #c6c4c2;
+  margin-right: 20px;
+  font-size: 20px;
+  position: relative;
+  top: 70px;
+  &:hover {
+    color: #817f7d;
+  }
+}
+
 .sidebar {
   position: absolute;
   width: $sidebar_width;

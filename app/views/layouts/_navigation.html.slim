@@ -2,7 +2,7 @@
 
 ul.nav-list
   li
-    = link_to(image_tag('icon.home.gif'), '/')
+    a href="" class="ss-icon"  home
   - @collections.each do |collection|
     li
       = link_to collection.title, '/collection/'+collection.slug

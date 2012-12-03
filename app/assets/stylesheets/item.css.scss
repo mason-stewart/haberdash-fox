@@ -115,7 +115,7 @@
   }
 
   /* Tablet Portrait size to standard 960 (devices and browsers) */
-  @media only screen and (min-width: 780px) and (max-width: 1040px) {
+  @media only screen and (min-width: 960px) and (max-width: 1040px) {
 
   .item-grid {
     @include clearfix;
@@ -123,6 +123,16 @@
     margin-left: auto;
     margin-right: auto;
     width: 344px;
+    }
+
+    .sidebar {
+      width: 290px;
+    }
+    .content {
+      margin-left: 290px;
+    }
+    .logo {
+      width: 285px;
     }
   }
 

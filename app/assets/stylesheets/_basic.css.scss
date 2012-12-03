@@ -76,12 +76,17 @@ h2 {
 
 }
 
+.logo {
+  width: 320px;
+}
+
 .sidebar {
   position: absolute;
   width: $sidebar_width;
   top: 0;
   bottom: 0;
-  background: image_url('sidebar.bg.gif') repeat top left;
+  background: #ecebe9;
+  // background: image_url('sidebar.bg.gif') repeat top left;
 
   .nav-list {
     margin: 0;

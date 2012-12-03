@@ -47,7 +47,8 @@ h2 {
   font-size: 40px;
   text-align: center;
   text-transform: uppercase;
-  margin: 20px 20px;
+  margin: 80px 20px 20px 20px;
+  max-width: 800px
 }
 
 .top-bar {
@@ -78,6 +79,7 @@ h2 {
 
 .logo {
   width: 320px;
+  margin-top: -36px
 }
 
 .symbolset {

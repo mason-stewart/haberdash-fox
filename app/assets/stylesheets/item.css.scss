@@ -115,7 +115,7 @@
   }
 
   /* Tablet Portrait size to standard 960 (devices and browsers) */
-  @media only screen and (min-width: 960px) and (max-width: 1040px) {
+  @media only screen and (min-width: 900px) and (max-width: 1040px) {
 
   .item-grid {
     @include clearfix;
@@ -133,6 +133,24 @@
     }
     .logo {
       width: 285px;
+    }
+    .sidebar-top{
+      margin-left: -39px;
+    }
+
+    h1, h2{
+      font-size: 40px;
+    }
+
+    .top-bar .top-bar-content {
+      margin-left: 290px;
+      color: #C59D5E;
+      text-align: center;
+      font-size: 16px;
+      font-weight: lighter;
+      line-height: 44px;
+      text-transform: uppercase;
+      letter-spacing: 4px;
     }
   }
 

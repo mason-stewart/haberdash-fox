@@ -19,6 +19,9 @@ html
       .top-bar
         .top-bar-content
           | A Collection Of The Best Menswares On Etsy
+      .top-nav 
+        = link_to(image_tag('haberdash-logotype.svg', :class=>"logotype"), '/')
+        .menu menu
       .sidebar
         img src="/assets/sidebar-top.png" class="sidebar-top"
         = render 'layouts/navigation'

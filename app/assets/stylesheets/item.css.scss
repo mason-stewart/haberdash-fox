@@ -21,7 +21,21 @@
         display: block;
       }
     }
+  }
+}
 
+.back {
+  font-size: 18px;
+  font-weight: 400;
+  color: #b05e27;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  padding: 30px 0px 8px 0;
+  width: 100%;
+  &:hover {
+    // @include box-shadow(#e3e1df 1px 1px 1px 1px inset); 
   }
 }
 
@@ -116,7 +130,7 @@
   }
 
   /* Tablet Portrait size to standard 960 (devices and browsers) */
-  @media only screen and (min-width: 900px) and (max-width: 1040px) {
+  @media only screen and (min-width: 775px) and (max-width: 1040px) {
 
   .item-grid {
     @include clearfix;
@@ -147,7 +161,7 @@
       margin-left: 290px;
       color: #C59D5E;
       text-align: center;
-      font-size: 16px;
+      font-size: 14px;
       font-weight: lighter;
       line-height: 44px;
       text-transform: uppercase;
@@ -156,10 +170,65 @@
   }
 
   /* All Mobile Sizes (devices and browser) */
-  @media only screen and (max-width: 767px) {}
+  @media only screen and (max-width: 850px) {}
 
   /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
-  @media only screen and (min-width: 480px) and (max-width: 767px) {}
+  @media only screen and (max-width: 775px) {
 
-  /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
-  @media only screen and (max-width: 479px) {}
+    .item-grid {
+    @include clearfix;
+    padding: 7px 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 344px;
+    }
+
+    .back {
+      display: none;
+    }
+
+    .top-nav {
+      display: block;
+      height: 80px;
+      background: #ecebe9;
+      .menu {
+        background: #cbcac9;
+        width: 15%;
+        height: 80px;
+        float: right;
+      }
+      .logotype {
+        width: 70%;
+        float: left;
+        margin-left: 10%;
+      }
+    }
+
+    .sidebar {
+      display: none;
+    }
+    .content {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .sidebar-top{
+      margin-left: -39px;
+    }
+
+    h1, h2{
+      font-size: 40px;
+    }
+    .top-bar {
+      height: 28px;
+    }
+    .top-bar .top-bar-content {
+      margin-left: 0px;
+      color: #C59D5E;
+      text-align: center;
+      font-size: 12px;
+      font-weight: lighter;
+      line-height: 30px;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+    }
+  }

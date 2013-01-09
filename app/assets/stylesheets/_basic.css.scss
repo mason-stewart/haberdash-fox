@@ -47,7 +47,7 @@ h2 {
   font-size: 40px;
   text-align: center;
   text-transform: uppercase;
-  margin-top: 80px;
+  // margin-top: 80px;
   margin-bottom: 20px;
   max-width: 1000px;
   margin-left:auto;
@@ -124,6 +124,10 @@ h2 {
       }
     }
   }
+}
+
+.top-nav {
+  display: none;
 }
 
 .content {

@@ -1,3 +1,3 @@
 Etsy.environment = :production
-Etsy.api_key = ENV['ETSY_API_KEY']
-Etsy.api_secret = ENV['ETSY_API_SECRET']
+Etsy.api_key = "***REMOVED***"
+Etsy.api_secret = "***REMOVED***"

@@ -120,6 +120,10 @@
   }
 }
 
+h1, h2{
+  padding: 0 3%;
+}
+
 /* #Media Queries
 ================================================== */
 
@@ -161,6 +165,7 @@
 
     h1, h2{
       font-size: 40px;
+      padding: 0 3%;
     }
 
     .top-bar .top-bar-content {
@@ -191,24 +196,6 @@
 
     .back {
       display: none;
-    }
-
-    .top-nav {
-      display: block;
-      height: 80px;
-      background: #ecebe9;
-      width: 100%;
-      .menu {
-        background: #cbcac9;
-        width: 80px;
-        height: 80px;
-        float: right;
-      }
-      .logotype {
-        width: 70%;
-        float: left;
-        margin-left: 10%;
-      }
     }
 
     .sidebar {
@@ -246,6 +233,36 @@
       text-transform: uppercase;
       letter-spacing: 4px;
     }
+    .top-nav {
+      display: block;
+      height: 60px;
+      background: #ecebe9;
+      width: 85%;
+      text-align: center;
+      position: relative;
+    }
+    .menu {
+      background: #cbcac9;
+      width: 15%;
+      height: 60px;
+      text-align: center;
+      position: absolute;
+      top: 28px;
+      right: 0;
+      }
+    .logotype {
+      width: 90%;
+      margin-top: 3px;
+      max-width: 400px;
+    }
+
+    .mobile-menu {
+      font-size: 1.5em;
+      display: block;
+      height: 36px;
+      width: 100%;
+      padding: 14px 0;
+    }
   }
 
     /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
@@ -267,27 +284,30 @@
       display: block;
       height: 60px;
       background: #ecebe9;
-      .menu {
-        background: #cbcac9;
-        width: 60px;
-        height: 60px;
-        float: right;
+      width: 85%;
+      text-align: center;
+      position: relative;
+    }
+    .menu {
+      background: #cbcac9;
+      width: 15%;
+      height: 60px;
+      text-align: center;
+      position: absolute;
+      top: 0;
+      right: 0;
       }
-      .logotype {
-        width: 280px;
-        float: left;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 2%;
-      }
+    .logotype {
+      width: 90%;
+      margin-top: 5px;
     }
 
     .mobile-menu {
       font-size: 1.5em;
       display: block;
       height: 36px;
-      width: 24px;
-      padding: 14px 18px;
+      width: 100%;
+      padding: 14px 0;
     }
 
     .sidebar {
@@ -307,16 +327,6 @@
       margin-bottom: 8px;
     }
     .top-bar {
-      height: 25px;
-    }
-    .top-bar .top-bar-content {
-      margin-left: 0px;
-      color: #C59D5E;
-      text-align: center;
-      font-size: 8px;
-      font-weight: lighter;
-      line-height: 27px;
-      text-transform: uppercase;
-      letter-spacing: 4px;
+      display: none;
     }
   }

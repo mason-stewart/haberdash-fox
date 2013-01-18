@@ -56,10 +56,8 @@ h2 {
 }
 
 .top-bar {
-  // min-width: $container_width;
   height: 41px;
   background: image_url('topbar.bg.gif') repeat-x top left;
-
   .top-bar-content {
     margin-left: $sidebar_width;
     // width: $content_width;

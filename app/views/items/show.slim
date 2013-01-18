@@ -5,13 +5,12 @@ h2 = @item.title
 .meta
   .price $#{@item.price}
   a href="#{@item.url}" class="purchase" target="_blank" Purchase on Etsy
-  a href="#{@item.url}" class="ss-icon ss-social-circle symbolset" target="_blank" Twitter
-  a href="#{@item.url}" class="ss-icon ss-social-circle symbolset" target="_blank" Facebook
-  a href="#{@item.url}" class="ss-icon ss-social-circle symbolset" target="_blank" Pinterest
+  / a href="#{@item.url}" class="ss-icon ss-social-circle symbolset" target="_blank" Twitter
+  / a href="#{@item.url}" class="ss-icon ss-social-circle symbolset" target="_blank" Facebook
+  / a href="#{@item.url}" class="ss-icon ss-social-circle symbolset" target="_blank" Pinterest
 .detail
   img class="photos" src="#{@item.photos.where(:visible => true).first.attrs['url_fullxfull']}"
   
-  h3 Oh the details.
-  
   .description    
+    h3 Oh the details.
     = @item.description

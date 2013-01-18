@@ -40,13 +40,13 @@
 }
 
 .detail {
-  width: 570px;
+  max-width: 600px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
-  top: 80px;
-  position: relative;
+  margin-top: 18%;
   .photos {
-    width: 570px;
+    width: 100%;
     margin-bottom: 30px;
   }
 }
@@ -55,6 +55,7 @@
   font-size: 15px;
   line-height: 22px;
   font-weight: 300;
+  padding: 5%;
 }
 
 .meta {
@@ -173,7 +174,7 @@
   @media only screen and (max-width: 850px) {}
 
   /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
-  @media only screen and (max-width: 775px) {
+  @media only screen and (min-width: 500px) and (max-width: 775px) {
 
     .item-grid {
     @include clearfix;
@@ -191,9 +192,10 @@
       display: block;
       height: 80px;
       background: #ecebe9;
+      width: 100%;
       .menu {
         background: #cbcac9;
-        width: 15%;
+        width: 80px;
         height: 80px;
         float: right;
       }
@@ -215,6 +217,14 @@
       margin-left: -39px;
     }
 
+    .mobile-menu {
+      font-size: 1.5em;
+      display: block;
+      height: 36px;
+      width: 24px;
+      padding: 14px 24px;
+    }
+
     h1, h2{
       font-size: 40px;
     }
@@ -228,6 +238,79 @@
       font-size: 12px;
       font-weight: lighter;
       line-height: 30px;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+    }
+  }
+
+    /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+  @media only screen and (max-width: 500px) {
+
+    .item-grid {
+    @include clearfix;
+    padding: 7px 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 344px;
+    }
+
+    .back {
+      display: none;
+    }
+
+    .top-nav {
+      display: block;
+      height: 60px;
+      background: #ecebe9;
+      .menu {
+        background: #cbcac9;
+        width: 60px;
+        height: 60px;
+        float: right;
+      }
+      .logotype {
+        width: 280px;
+        float: left;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 2%;
+      }
+    }
+
+    .mobile-menu {
+      font-size: 1.5em;
+      display: block;
+      height: 36px;
+      width: 24px;
+      padding: 14px 18px;
+    }
+
+    .sidebar {
+      display: none;
+    }
+    .content {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .sidebar-top{
+      margin-left: -39px;
+    }
+
+    h1, h2{
+      font-size: 36px;
+      margin-top: 25px;
+      margin-bottom: 8px;
+    }
+    .top-bar {
+      height: 25px;
+    }
+    .top-bar .top-bar-content {
+      margin-left: 0px;
+      color: #C59D5E;
+      text-align: center;
+      font-size: 8px;
+      font-weight: lighter;
+      line-height: 27px;
       text-transform: uppercase;
       letter-spacing: 4px;
     }

@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @import "compass/utilities/general/clearfix";
+@import "compass";
 
 .item-grid {
   @include clearfix;
@@ -32,10 +33,14 @@
   margin-left: auto;
   margin-right: auto;
   display: block;
-  padding: 30px 0px 8px 0;
-  width: 100%;
+  padding: 30px 0px 4px 0;
+  width: 62px;
   &:hover {
-    // @include box-shadow(#e3e1df 1px 1px 1px 1px inset); 
+    @include box-shadow(#e3e1df 0px -5px inset); 
+  }
+  .ss-left {
+    font-size: 12px;
+    margin-right: 4px;
   }
 }
 

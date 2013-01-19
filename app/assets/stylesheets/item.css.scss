@@ -294,6 +294,7 @@ h1, h2{
         width: 100%;
         padding: 0;
         text-align: center;
+        text-transform: uppercase;
         li {
           text-align: center;
           padding: 0 10%;
@@ -414,7 +415,7 @@ h1, h2{
         background: image_url('topbar.bg.gif') repeat-x top left;
         color: $gold_color;
         text-align: center;
-        font-size: .6em;
+        font-size: .5em;
         font-weight: lighter;
         text-transform: uppercase;
         letter-spacing: 2px;

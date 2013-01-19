@@ -103,6 +103,20 @@ h2 {
   background: #ecebe9;
   // background: image_url('sidebar.bg.gif') repeat top left;
 
+  ul.submenu, ul.copyright {
+    border-top: 1px solid #fff;
+    padding: 0;
+    li {
+      margin: 25px 0;
+      font-size: .9em;
+      font-weight: 400;
+    }
+    li.copyright {
+      font-size: 10px;
+      margin: 20px 0;
+    }
+  }
+
   .nav-list {
     margin: 0;
     padding: 0;

@@ -5,6 +5,12 @@
 @import "compass/utilities/general/clearfix";
 @import "compass";
 
+$sidebar_width: 329px;
+$content_width: 1060px;
+$container_width: $content_width + $sidebar_width;
+$gold_color: #c59d5e;
+$slate_color: #323236;
+
 .item-grid {
   @include clearfix;
   padding: 7px 20px;
@@ -33,7 +39,7 @@
   margin-left: auto;
   margin-right: auto;
   display: block;
-  padding: 30px 0px 4px 0;
+  padding: 20px 0px 4px 0;
   width: 62px;
   &:hover {
     @include box-shadow(#e3e1df 0px -5px inset); 
@@ -60,7 +66,7 @@
   font-size: 15px;
   line-height: 22px;
   font-weight: 300;
-  padding: 5%;
+  padding: 6%;
 }
 
 .meta {
@@ -120,6 +126,10 @@
   }
 }
 
+.footer {
+  display: none;
+}
+
 h1, h2{
   padding: 0 3%;
 }
@@ -172,11 +182,25 @@ h1, h2{
       margin-left: 290px;
       color: #C59D5E;
       text-align: center;
-      font-size: 14px;
+      font-size: 12px;
       font-weight: lighter;
       line-height: 44px;
       text-transform: uppercase;
       letter-spacing: 4px;
+    }
+    .footer {
+      display: block;
+      ul.submenu {
+        display: inline;
+        height: 80px;
+        width: 100%;
+        li {
+          width: 30%;
+          text-align: center;
+          padding: 10px 0;
+          font-size: 1em;
+        }
+      }
     }
   }
 
@@ -219,6 +243,8 @@ h1, h2{
 
     h1, h2{
       font-size: 40px;
+      margin-top: 6%;
+      margin-bottom: 8px;
     }
     .top-bar {
       height: 28px;
@@ -262,6 +288,39 @@ h1, h2{
       height: 36px;
       width: 100%;
       padding: 14px 0;
+    }
+    .footer {
+      display: block;
+      background: #c6c4c2;
+      position: relative;
+      ul.copyright {
+        display: none;
+      }
+      ul.submenu {
+        display: inline-block;
+        width: 100%;
+        padding: 0;
+        text-align: center;
+        li {
+          text-align: center;
+          padding: 0 10%;
+          font-size: 1em;
+          display: inline;
+        }
+      }
+      .bottom-bar {
+        width: 100%;
+        background: image_url('topbar.bg.gif') repeat-x top left;
+        color: $gold_color;
+        text-align: center;
+        font-size: 11px;
+        font-weight: lighter;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        padding: 10px 0 6px 0;
+        display: block;
+        position: relative;
+      }
     }
   }
 
@@ -316,17 +375,51 @@ h1, h2{
     .content {
       margin-left: auto;
       margin-right: auto;
+      padding-bottom: 10%
     }
     .sidebar-top{
       margin-left: -39px;
     }
 
     h1, h2{
-      font-size: 36px;
-      margin-top: 25px;
+      font-size: 30px;
+      margin-top: 6%;
       margin-bottom: 8px;
     }
     .top-bar {
       display: none;
+    }
+    .footer {
+      display: block;
+      background: #c6c4c2;
+      position: relative;
+      ul.copyright {
+        display: none;
+      }
+      ul.submenu {
+        display: inline-block;
+        width: 100%;
+        padding: 0;
+        text-align: center;
+        li {
+          text-align: center;
+          padding: 0 10%;
+          font-size: 1em;
+          display: inline;
+        }
+      }
+      .bottom-bar {
+        width: 100%;
+        background: image_url('topbar.bg.gif') repeat-x top left;
+        color: $gold_color;
+        text-align: center;
+        font-size: 11px;
+        font-weight: lighter;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        padding: 10px 0 6px 0;
+        display: block;
+        position: relative;
+      }
     }
   }

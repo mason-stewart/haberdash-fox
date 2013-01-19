@@ -11,6 +11,11 @@ html
     javascript:
       try{Typekit.load();}catch(e){}
 
+    script type="text/javascript" src="/javascripts/jquery-1.8.2.min.js"
+    script type="text/javascript" src="/javascripts/underscore-1.4.2.min.js"
+    script type="text/javascript" src="/javascripts/jquery.fittext.custom.js"
+    script type="text/javascript" src="/javascripts/navigation.js"
+
     = stylesheet_link_tag "social/ss-social"
     = stylesheet_link_tag "standard/ss-standard"
 
@@ -26,7 +31,23 @@ html
       .sidebar
         img src="/assets/sidebar-top.png" class="sidebar-top"
         = render 'layouts/navigation'
+
       .content
         = yield
 
-      footer
+      .footer
+        ul.submenu 
+          li 
+            a href="" About
+          li 
+            a href="http://twitter.com/#/thehaberdashfox" target="_blank" Twitter
+          li
+            a href="" Contact
+
+        ul.copyright
+          li.copyright ©2013
+          li.copyright Pixels & Frontend by Marco Suarez
+          li.copyright Backend by Mason Stewart
+
+        .bottom-bar
+          | A Collection Of The Best Menswares On Etsy

@@ -341,7 +341,7 @@ h1, h2{
 
     .top-nav {
       display: block;
-      height: 60px;
+      height: 50px;
       background: #ecebe9;
       width: 85%;
       text-align: center;
@@ -350,7 +350,7 @@ h1, h2{
     .menu {
       background: #cbcac9;
       width: 15%;
-      height: 60px;
+      height: 50px;
       text-align: center;
       position: absolute;
       top: 0;
@@ -364,9 +364,8 @@ h1, h2{
     .mobile-menu {
       font-size: 1.5em;
       display: block;
-      height: 36px;
       width: 100%;
-      padding: 14px 0;
+      padding: 10px 0;
     }
 
     .sidebar {

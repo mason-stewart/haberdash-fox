@@ -39,7 +39,7 @@ $slate_color: #323236;
   margin-left: auto;
   margin-right: auto;
   display: block;
-  padding: 20px 0px 4px 0;
+  padding: 21px 0px 4px 0;
   width: 62px;
   &:hover {
     @include box-shadow(#e3e1df 0px -5px inset); 
@@ -66,7 +66,7 @@ $slate_color: #323236;
   font-size: 15px;
   line-height: 22px;
   font-weight: 300;
-  padding: 6%;
+  padding: 0 6%;
 }
 
 .meta {
@@ -149,11 +149,16 @@ h1, h2{
     margin-right: auto;
     width: 680px;
     }
+  .footer {
+    display: none;
+    }
   }
 
   /* Tablet Portrait size to standard 960 (devices and browsers) */
   @media only screen and (min-width: 775px) and (max-width: 1040px) {
-
+  .footer {
+    display: none;
+    }
   .item-grid {
     @include clearfix;
     padding: 7px 20px;
@@ -189,20 +194,6 @@ h1, h2{
       line-height: 44px;
       text-transform: uppercase;
       letter-spacing: 4px;
-    }
-    .footer {
-      display: block;
-      ul.submenu {
-        display: inline;
-        height: 80px;
-        width: 100%;
-        li {
-          width: 30%;
-          text-align: center;
-          padding: 10px 0;
-          font-size: 1em;
-        }
-      }
     }
   }
 
@@ -415,7 +406,7 @@ h1, h2{
         background: image_url('topbar.bg.gif') repeat-x top left;
         color: $gold_color;
         text-align: center;
-        font-size: 10px;
+        font-size: .7em;
         font-weight: lighter;
         text-transform: uppercase;
         letter-spacing: 2px;

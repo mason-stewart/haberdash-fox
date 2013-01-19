@@ -39,7 +39,7 @@ h1 {
   text-align: center;
   text-transform: uppercase;
   display: block;
-  margin-top: 50px;
+  margin-top: 49px;
   margin-bottom: 50px;
 }
 
@@ -47,8 +47,7 @@ h2 {
   font-size: 40px;
   text-align: center;
   text-transform: uppercase;
-  // margin-top: 80px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   max-width: 1000px;
   margin-left:auto;
   margin-right: auto;
@@ -116,7 +115,7 @@ h2 {
   ul.copyright {
     border-top: 1px solid #fff;
     padding: 20px 0;
-    li.copyright {
+    li {
       font-size: 10px;
       margin: 10px 0;
       font-weight: 400;

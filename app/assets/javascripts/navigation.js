@@ -7,7 +7,7 @@
       minFontSize: '30px',
       maxFontSize: '40px'
     });
-    $('#top span, .home').click(function() {
+    $('#top span, .mobile-menu').click(function() {
       return $('.navigation td').each(function(index) {
         var _this = this;
         return setTimeout((function() {

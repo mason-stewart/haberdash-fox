@@ -322,17 +322,17 @@ h1, h2{
 
     .item-grid {
     @include clearfix;
-    padding: 7px 20px;
+    // padding: 7px 20px;
     margin-left: auto;
     margin-right: auto;
-    width: 0;
+    width: 320px;
     .item {
       width: 320px;
       height: 320px;
       background-size: cover;
       background-position: 50% 50%;
       float: left;
-      margin: 10px;
+      margin: 10px 0;
     }
 
     .back {

@@ -322,7 +322,7 @@ h1, h2{
 
     .item-grid {
     @include clearfix;
-    // padding: 7px 20px;
+    padding: 0;
     margin-left: auto;
     margin-right: auto;
     width: 320px;

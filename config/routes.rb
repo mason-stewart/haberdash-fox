@@ -5,6 +5,9 @@ HaberdasherFox::Application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
 
+  get 'about' => 'pages#about'
+  get 'contact' => 'pages#contact'
+
   get '/' => 'collection#index'
   get '/collection/:slug' => 'collection#show'
   

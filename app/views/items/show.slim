@@ -12,5 +12,4 @@ h2 = @item.title
   img class="photos" src="#{@item.photos.where(:visible => true).first.attrs['url_fullxfull']}"
   
   .description    
-    h3 Oh the details.
     = @item.description

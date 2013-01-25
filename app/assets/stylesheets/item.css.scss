@@ -22,10 +22,31 @@ $slate_color: #323236;
     background-position: 50% 50%;
     float: left;
     margin: 10px;
-
     &:hover {
       .info {
-        display: block;
+        @include opacity(1);
+      }
+    }
+    .info {
+      @include transition(all 0.3s ease);
+      @include opacity(0);
+      background: rgba(197, 157, 94, 0.85);
+      height: 280px;
+      width: 250px;
+      padding: 40px 35px 0px 35px;
+      position: relative;
+      .name {
+        font-size: 22px;
+        font-weight: 400;
+        color: #fff;
+      }
+      .hover-price {
+        color: #fff;
+        font-size: 30px;
+        position: absolute;
+        bottom: 15px;
+        font-weight: 600;
+        right: 35px;
       }
     }
   }
@@ -101,30 +122,6 @@ $slate_color: #323236;
   right: 0;
   .purchase a {
     display: block;
-  }
-}
-
-.info {
-  background: rgba(197, 157, 94, 0.85);
-  height: 280px;
-  width: 250px;
-  padding: 40px 35px 0px 35px;
-  position: relative;
-  display: none;
-
-  .name {
-    font-size: 22px;
-    font-weight: 400;
-    color: #fff;
-  }
-
-  .hover-price {
-    color: #fff;
-    font-size: 30px;
-    position: absolute;
-    bottom: 15px;
-    font-weight: 600;
-    right: 35px;
   }
 }
 

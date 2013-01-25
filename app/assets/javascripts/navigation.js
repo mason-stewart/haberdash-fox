@@ -3,10 +3,7 @@
 
   $(document).ready(function() {
     var $window, colorChange, sections;
-    $(".navigation td").fitText(0.2, {
-      minFontSize: '30px',
-      maxFontSize: '40px'
-    });
+
     $('#top span, .mobile-menu').click(function() {
       return $('.navigation td').each(function(index) {
         var _this = this;

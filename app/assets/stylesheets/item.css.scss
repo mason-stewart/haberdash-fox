@@ -42,7 +42,7 @@ $slate_color: #323236;
   padding: 21px 0px 4px 0;
   width: 62px;
   &:hover {
-    @include box-shadow(#e3e1df 0px -5px inset); 
+    @include box-shadow(#e3e1df 0px -5px inset);
   }
   .ss-left {
     font-size: 12px;
@@ -488,3 +488,64 @@ h1, h2{
       }
     }
   }
+
+.iosSlider {
+  // required
+  position: relative;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 500px;
+
+  .slider {
+    // required
+    width: 100%;
+    height: 100%;
+
+    .slide {
+      // required
+      float: left;
+      width: 100%;
+      height: 500px;
+      background-position: center center;
+      background-size: cover;
+    }
+  }
+}
+
+.slide-selectors {
+  position: relative;
+  bottom: 20px;
+  left: 0;
+  width: 1024px;
+  margin: 0 auto;
+  z-index: 1;
+  height: 10px;
+
+  .item {
+    float: left;
+    width: 9px;
+    height: 9px;
+    border: 1px solid #000;
+    background: #999;
+    margin: 0 0 0 10px;
+    @include opacity(0.25);
+    @include border-radius(100px);
+
+    &.selected {
+      background: #000;
+      @include opacity(1);
+    }
+  }
+}
+
+.scrollbar {
+  position: relative;
+  bottom: 4px;
+  left: 0;
+  width: 1024px;
+  height: 4px;
+  margin: 0 auto;
+  z-index: 1;
+}

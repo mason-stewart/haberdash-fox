@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    meta content="width=(device-width,)initial-scale=1.0" name="viewport"
+    meta content="width=device-width, initial-scale=1.0" name="viewport"
     title= content_for?(:title) ? yield(:title) : "Haberdasher Fox"
     = stylesheet_link_tag "application", :media => "all"
     = javascript_include_tag "application"
@@ -11,18 +11,41 @@ html
     javascript:
       try{Typekit.load();}catch(e){}
 
+    script type="text/javascript" src="/javascripts/jquery-1.8.2.min.js"
+    script type="text/javascript" src="/javascripts/underscore-1.4.2.min.js"
+    script type="text/javascript" src="/javascripts/jquery.fittext.custom.js"
+    script type="text/javascript" src="/javascripts/navigation.js"
+
     = stylesheet_link_tag "social/ss-social"
     = stylesheet_link_tag "standard/ss-standard"
+
+    / MailChimp Signup Form
+    = stylesheet_link_tag "http://cdn-images.mailchimp.com/embedcode/slim-081711.css"
 
   body
     .container.main
       .top-bar
         .top-bar-content
           | A Collection Of The Best Menswares On Etsy
+      .top-nav 
+        = link_to(image_tag('haberdash-logotype.svg', :class=>"logotype"), '/')
+      .menu
+        a href="#" class="ss-icon ss-standard mobile-menu" rows
       .sidebar
         img src="/assets/sidebar-top.png" class="sidebar-top"
         = render 'layouts/navigation'
+
       .content
         = yield
 
-      footer
+      .footer
+        ul.submenu 
+          li 
+            a href="" About
+          li 
+            a href="http://twitter.com/#/thehaberdashfox" target="_blank" Twitter
+          li
+            a href="" Contact
+
+        .bottom-bar
+          | A Collection Of The Best Menswares On Etsy

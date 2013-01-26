@@ -1,4 +1,6 @@
 namespace :db do
+
+  desc "This removes stale items in the db. It's called by the Heroku scheduler add-on"
   task :remove_old_items => :environment do
 
     Item.all.each do |item|

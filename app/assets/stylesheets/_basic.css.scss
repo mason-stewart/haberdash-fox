@@ -161,6 +161,6 @@ h3 {
 .content {
   padding-bottom: 200px;
   margin-left: $sidebar_width;
-  // width: $content_width;
+  min-height: 800px;
 }
 

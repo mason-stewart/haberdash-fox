@@ -73,7 +73,7 @@ $slate_color: #323236;
 
 .detail {
   max-width: 600px;
-  width: 100%;
+  // width: 100%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 80px;
@@ -83,9 +83,9 @@ $slate_color: #323236;
   }
 }
 
-.big {
+.contact {
   text-align: center;
-  font-size: 24px;
+  min-height: 200px;
 }
 
 .description {
@@ -93,6 +93,17 @@ $slate_color: #323236;
   line-height: 22px;
   font-weight: 300;
   padding: 10% 6%;
+}
+
+.subpage {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 24px;
+  font-size: 15px;
+  line-height: 22px;
+  font-weight: 300;
+  padding: 0 6%;
 }
 
 .meta {
@@ -340,6 +351,11 @@ h1, h2{
       max-width: 400px;
     }
 
+    h3 {
+      margin-top: 0;
+      font-size: 18px;
+    }
+
     .mobile-menu {
       font-size: 1.5em;
       display: block;
@@ -451,6 +467,10 @@ h1, h2{
       font-size: 30px;
       margin-top: 6%;
       margin-bottom: 8px;
+    }
+    h3 {
+      margin-top: 0;
+      font-size: 18px;
     }
     .top-bar {
       display: none;

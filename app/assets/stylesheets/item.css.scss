@@ -273,6 +273,7 @@ h1, h2{
   table {
     height: 100%;
     width: 100%;
+    border-spacing: 0;
   }
 
   tr {
@@ -290,7 +291,7 @@ h1, h2{
     overflow: hidden;
     white-space: nowrap;
     font-size: 4em;
-    background: #4383c5;
+    background: $gold_color;
 
     @include transition-property(right);
     @include transition-duration(0.5s);
@@ -299,50 +300,42 @@ h1, h2{
       right: -10007px;
     }
 
-    &.intro {
-      background: #4383c5;
+    &.Home {
+      background: $gold-color;
     }
 
-    &.preface {
-      background: #b1ab87;
+    &.Clothing {
+      background: lighten( $gold-color, 5% );
     }
 
-    &.rules {
-      background: #3e5155;
+    &.Accessories {
+      background: lighten( $gold-color, 10% );
     }
 
-    &.communication {
-      background: #536a27;
+    &.Shoes {
+      background: lighten( $gold-color, 15% );
     }
 
-    &.structure {
-      background: #9fb44d;
+    &.Outdoor {
+      background: lighten( $gold-color, 20% );
     }
 
-    &.value {
-      background: #e56153;
+    &.Housewares {
+      background: lighten( $gold-color, 25% );
     }
 
-    &.space {
-      background: #7a2b2b;
-    }
-
-    &.work {
-      background: #b2d4d2;
-    }
-
-    &.wrong {
-      background: #501a31;
+    &.Art {
+      background: lighten( $gold-color, 30% );
     }
 
     a {
-      font-family: 'Sentinel A', 'Sentinel B', arial;
-      font-weight: 500;
       font-style: normal;
-      color: #f7f7f7;
+      text-transform: uppercase;
+      font-size: .7em;
+      color: #fff;
       text-decoration: none;
       margin-left: 5%;
-      @include text-shadow( 0px 2px 2px rgba(0,0,0,0.3));
+      // @include text-shadow( 0px 2px 2px rgba(0,0,0,0.3));
       display: block;
     }
   }
@@ -429,6 +422,11 @@ h1, h2{
 
   /* All Mobile Sizes (devices and browser) */
   @media only screen and (min-width: 775px) and (max-width: 960px) {
+  
+  .mobile-navigation {
+    display: block;
+  }
+
   .footer {
     display: none;
     }
@@ -483,6 +481,10 @@ h1, h2{
 
   /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
   @media only screen and (min-width: 500px) and (max-width: 775px) {
+
+    .mobile-navigation {
+      display: block;
+    }
 
     .item-grid {
     @include clearfix;

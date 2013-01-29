@@ -261,29 +261,115 @@ h1, h2{
   left: 620px;
 }
 
+
+.mobile-navigation {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  right: 10007px;
+  height: 101%;
+  width: 100%;
+
+  table {
+    height: 100%;
+    width: 100%;
+  }
+
+  tr {
+    padding-top: 10%;
+    height: 10%;
+  }
+
+  td {
+    position: relative;
+    right: 0;
+    height: 10%;
+    width: 100%;
+    margin: 0;
+    padding: 0 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 4em;
+    background: #4383c5;
+
+    @include transition-property(right);
+    @include transition-duration(0.5s);
+
+    &.active {
+      right: -10007px;
+    }
+
+    &.intro {
+      background: #4383c5;
+    }
+
+    &.preface {
+      background: #b1ab87;
+    }
+
+    &.rules {
+      background: #3e5155;
+    }
+
+    &.communication {
+      background: #536a27;
+    }
+
+    &.structure {
+      background: #9fb44d;
+    }
+
+    &.value {
+      background: #e56153;
+    }
+
+    &.space {
+      background: #7a2b2b;
+    }
+
+    &.work {
+      background: #b2d4d2;
+    }
+
+    &.wrong {
+      background: #501a31;
+    }
+
+    a {
+      font-family: 'Sentinel A', 'Sentinel B', arial;
+      font-weight: 500;
+      font-style: normal;
+      color: #f7f7f7;
+      text-decoration: none;
+      margin-left: 5%;
+      @include text-shadow( 0px 2px 2px rgba(0,0,0,0.3));
+      display: block;
+    }
+  }
+}
+
 /* #Media Queries
 ================================================== */
 
   /* Smaller than standard 960 (devices and browsers) */
   @media only screen and (max-width: 1403px) {
-
-  .item-grid {
-    @include clearfix;
-    // padding: 7px 20px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 680px;
-    .item {
-      width: 320px;
-      height: 320px;
-      background-size: cover;
-      background-position: 50% 50%;
-      float: left;
-      margin: 10px;
+    .item-grid {
+      @include clearfix;
+      // padding: 7px 20px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 680px;
+      .item {
+        width: 320px;
+        height: 320px;
+        background-size: cover;
+        background-position: 50% 50%;
+        float: left;
+        margin: 10px;
+        }
       }
-    }
-  .footer {
-    display: none;
+    .footer {
+      display: none;
     }
   }
 
@@ -522,120 +608,125 @@ h1, h2{
     }
   }
 
-    /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
-  @media only screen and (max-width: 500px) {
+  /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+@media only screen and (max-width: 500px) {
 
-    .item-grid {
-      @include clearfix;
-      padding: 0;
-      margin-left: auto;
-      margin-right: auto;
+  .mobile-navigation {
+    display: block;
+  }
+
+  .item-grid {
+    @include clearfix;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 320px;
+    .item {
       width: 320px;
-      .item {
-        width: 320px;
-        height: 320px;
-        background-size: cover;
-        background-position: 50% 50%;
-        float: left;
-        margin: 10px 0;
-      }
-    }
-
-    .back {
-      display: none;
-    }
-
-    .top-nav {
-      display: block;
-      height: 50px;
-      background: #ecebe9;
-      width: 85%;
-      text-align: center;
-      position: relative;
-    }
-
-    .menu {
-      background: #cbcac9;
-      width: 15%;
-      height: 50px;
-      text-align: center;
-      position: absolute;
-      top: 0;
-      right: 0;
-    }
-
-    .logotype {
-      width: 90%;
-      margin-top: 5px;
-    }
-
-    .mobile-menu {
-      font-size: 1.5em;
-      display: block;
-      width: 100%;
-      padding: 10px 0;
-    }
-
-    .sidebar {
-      display: none;
-    }
-
-    .content {
-      margin-left: auto;
-      margin-right: auto;
-      padding-bottom: 10%
-    }
-    .sidebar-top{
-      margin-left: -39px;
-    }
-
-    h1, h2{
-      font-size: 30px;
-      margin-top: 6%;
-      margin-bottom: 8px;
-    }
-    h3 {
-      margin-top: 0;
-      font-size: 18px;
-    }
-    .top-bar {
-      display: none;
-    }
-    .footer {
-      display: block;
-      background: #c6c4c2;
-      position: relative;
-      ul.copyright {
-        display: none;
-      }
-      ul.submenu {
-        text-transform: uppercase;
-        display: inline-block;
-        width: 100%;
-        padding: 0;
-        text-align: center;
-        li {
-          text-align: center;
-          padding: 0 7%;
-          font-size: .9em;
-          display: inline;
-        }
-      }
-      .bottom-bar {
-        width: 100%;
-        background: image_url('topbar.bg.gif') repeat-x top left;
-        color: $gold_color;
-        text-align: center;
-        font-size: .5em;
-        font-weight: lighter;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        padding: 10px 0 6px 0;
-        display: block;
-        position: relative;
-      }
-    }
-    .scrollleft, .scrollright {
-      display: none;
+      height: 320px;
+      background-size: cover;
+      background-position: 50% 50%;
+      float: left;
+      margin: 10px 0;
     }
   }
+
+  .back {
+    display: none;
+  }
+
+  .top-nav {
+    display: block;
+    height: 50px;
+    background: #ecebe9;
+    width: 85%;
+    text-align: center;
+    position: relative;
+  }
+
+  .menu {
+    background: #cbcac9;
+    width: 15%;
+    height: 50px;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .logotype {
+    width: 90%;
+    margin-top: 5px;
+  }
+
+  .mobile-menu {
+    font-size: 1.5em;
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .content {
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 10%
+  }
+  .sidebar-top{
+    margin-left: -39px;
+  }
+
+  h1, h2{
+    font-size: 30px;
+    margin-top: 6%;
+    margin-bottom: 8px;
+  }
+  h3 {
+    margin-top: 0;
+    font-size: 18px;
+  }
+  .top-bar {
+    display: none;
+  }
+  .footer {
+    display: block;
+    background: #c6c4c2;
+    position: relative;
+    ul.copyright {
+      display: none;
+    }
+    ul.submenu {
+      text-transform: uppercase;
+      display: inline-block;
+      width: 100%;
+      padding: 0;
+      text-align: center;
+      li {
+        text-align: center;
+        padding: 0 7%;
+        font-size: .9em;
+        display: inline;
+      }
+    }
+    .bottom-bar {
+      width: 100%;
+      background: image_url('topbar.bg.gif') repeat-x top left;
+      color: $gold_color;
+      text-align: center;
+      font-size: .5em;
+      font-weight: lighter;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      padding: 10px 0 6px 0;
+      display: block;
+      position: relative;
+    }
+  }
+  .scrollleft, .scrollright {
+    display: none;
+  }
+
+}

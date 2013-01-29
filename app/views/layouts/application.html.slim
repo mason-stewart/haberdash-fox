@@ -20,6 +20,24 @@ html
 
 
   body
+    #js-mobile-navigation.mobile-navigation
+      table
+        tbody
+          - @collections.each do |collection|
+            tr
+              td class="#{collection.slug}"
+                = link_to collection.title, '/collection/'+collection.slug
+          tr
+            td class='space'
+              a href="/about" About
+          tr
+            td class='work'
+              a href="http://twitter.com/haberdashfox" target="_blank" Twitter
+          tr
+            td class='wrong'
+              a href="/contact" Contact
+
+
     .container.main
       .top-bar
         .top-bar-content
@@ -27,7 +45,7 @@ html
       .top-nav
         = link_to(image_tag('haberdash-logotype.svg', :class=>"logotype"), '/')
       .menu
-        a href="#" class="ss-icon ss-standard mobile-menu" rows
+        a#js-mobile-navigation-button href="#" class="ss-icon ss-standard mobile-menu" rows
       .sidebar
         img src="/assets/sidebar-top.png" class="sidebar-top"
         = render 'layouts/navigation'
@@ -36,10 +54,10 @@ html
         = yield
 
       .footer
-        ul.submenu 
-          li 
+        ul.submenu
+          li
             a href="/about" About
-          li 
+          li
             a href="http://twitter.com/haberdashfox" target="_blank" Twitter
           li
             a href="/contact" Contact

@@ -22,3 +22,18 @@ $(document).ready ->
     keyboardControls: true
     navPrevSelector: $('#js-scrollleft')
     navNextSelector: $('#js-scrollright')
+
+
+  # Animate the navigation in
+  $('#js-mobile-navigation-button').click ->
+    $('#js-mobile-navigation td').each (index) ->
+      setTimeout(
+        (=> $(@).addClass 'active')
+      , (index * 50))
+
+  # Animate the navigation out
+  $('td a').click ->
+    $('#js-mobile-navigation td').each (index) ->
+      setTimeout(
+        (=> $(@).removeClass 'active')
+      , (index * 50))

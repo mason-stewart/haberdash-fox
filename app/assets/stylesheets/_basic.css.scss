@@ -94,6 +94,15 @@ h3 {
   margin-top: -36px
 }
 
+p {
+  a {
+    color: #b05e27;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
 .symbolset {
   color: #c6c4c2;
   margin-right: 20px;

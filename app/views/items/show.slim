@@ -9,8 +9,9 @@ h2 = @item.title
   -# a href="#{@item.url}" class="ss-icon ss-social-circle symbolset" target="_blank" Facebook
   -# a href="#{@item.url}" class="ss-icon ss-social-circle symbolset" target="_blank" Pinterest
 .detail
+  .scrollleft.ss-navigateleft
+  .scrollright.ss-navigateright
   .iosSlider
-
     .slider
       - @item.photos.where(:visible => true).each do |photo|
         div class='slide' style="background-image: url(#{photo.attrs['url_fullxfull']})"

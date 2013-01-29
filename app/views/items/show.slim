@@ -1,7 +1,7 @@
 a href="/collection/#{@item.collection.slug}" class="back"
   span.ss-left
   | Back
-h2 = simple_format @item.title
+h2.title = simple_format @item.title
 .meta
   .price $#{@item.price}
   a href="#{@item.url}" class="purchase" target="_blank" Purchase on Etsy
@@ -22,4 +22,4 @@ h2 = simple_format @item.title
   .scrollbar
 
   .description
-    = simple_format @item.description
+    = simple_format @description

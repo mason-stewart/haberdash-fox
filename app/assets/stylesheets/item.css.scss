@@ -298,6 +298,10 @@ h1, h2{
       text-transform: uppercase;
       letter-spacing: 4px;
     }
+
+    .scrollright, .scrollleft {
+      display: none;
+    }
   }
 
   /* All Mobile Sizes (devices and browser) */
@@ -319,6 +323,10 @@ h1, h2{
       float: left;
       margin: 10px;
       }
+    }
+
+    .scrollright, .scrollleft {
+      display: none;
     }
 
     .sidebar {
@@ -383,6 +391,10 @@ h1, h2{
       height: 36px;
       width: 24px;
       padding: 14px 24px;
+    }
+
+    .scrollright, .scrollleft {
+      display: none;
     }
 
     h1, h2{
@@ -477,7 +489,7 @@ h1, h2{
     /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
   @media only screen and (max-width: 500px) {
 
-    .item-grid {
+  .item-grid {
     @include clearfix;
     padding: 0;
     margin-left: auto;
@@ -493,95 +505,98 @@ h1, h2{
     }
   }
 
-    .back {
+  .back {
+    display: none;
+  }
+
+  .top-nav {
+    display: block;
+    height: 50px;
+    background: #ecebe9;
+    width: 85%;
+    text-align: center;
+    position: relative;
+  }
+  .menu {
+    background: #cbcac9;
+    width: 15%;
+    height: 50px;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    }
+  .logotype {
+    width: 90%;
+    margin-top: 5px;
+  }
+
+  .mobile-menu {
+    font-size: 1.5em;
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .sidebar {
+    display: none;
+  }
+  .content {
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 10%
+  }
+  .sidebar-top{
+    margin-left: -39px;
+  }
+
+  h1, h2{
+    font-size: 30px;
+    margin-top: 6%;
+    margin-bottom: 8px;
+  }
+  h3 {
+    margin-top: 0;
+    font-size: 18px;
+  }
+  .top-bar {
+    display: none;
+  }
+  .footer {
+    display: block;
+    background: #c6c4c2;
+    position: relative;
+    ul.copyright {
       display: none;
     }
-
-    .top-nav {
-      display: block;
-      height: 50px;
-      background: #ecebe9;
-      width: 85%;
-      text-align: center;
-      position: relative;
-    }
-    .menu {
-      background: #cbcac9;
-      width: 15%;
-      height: 50px;
-      text-align: center;
-      position: absolute;
-      top: 0;
-      right: 0;
-      }
-    .logotype {
-      width: 90%;
-      margin-top: 5px;
-    }
-
-    .mobile-menu {
-      font-size: 1.5em;
-      display: block;
+    ul.submenu {
+      text-transform: uppercase;
+      display: inline-block;
       width: 100%;
-      padding: 10px 0;
+      padding: 0;
+      text-align: center;
+      li {
+        text-align: center;
+        padding: 0 7%;
+        font-size: .9em;
+        display: inline;
+      }
     }
-
-    .sidebar {
-      display: none;
-    }
-    .content {
-      margin-left: auto;
-      margin-right: auto;
-      padding-bottom: 10%
-    }
-    .sidebar-top{
-      margin-left: -39px;
-    }
-
-    h1, h2{
-      font-size: 30px;
-      margin-top: 6%;
-      margin-bottom: 8px;
-    }
-    h3 {
-      margin-top: 0;
-      font-size: 18px;
-    }
-    .top-bar {
-      display: none;
-    }
-    .footer {
+    .bottom-bar {
+      width: 100%;
+      background: image_url('topbar.bg.gif') repeat-x top left;
+      color: $gold_color;
+      text-align: center;
+      font-size: .5em;
+      font-weight: lighter;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      padding: 10px 0 6px 0;
       display: block;
-      background: #c6c4c2;
       position: relative;
-      ul.copyright {
-        display: none;
-      }
-      ul.submenu {
-        text-transform: uppercase;
-        display: inline-block;
-        width: 100%;
-        padding: 0;
-        text-align: center;
-        li {
-          text-align: center;
-          padding: 0 7%;
-          font-size: .9em;
-          display: inline;
-        }
-      }
-      .bottom-bar {
-        width: 100%;
-        background: image_url('topbar.bg.gif') repeat-x top left;
-        color: $gold_color;
-        text-align: center;
-        font-size: .5em;
-        font-weight: lighter;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        padding: 10px 0 6px 0;
-        display: block;
-        position: relative;
-      }
+    }
+    .scrollleft, .scrollright {
+      display: none;
     }
   }
+}

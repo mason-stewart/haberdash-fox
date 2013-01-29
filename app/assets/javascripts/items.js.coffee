@@ -7,7 +7,8 @@ slideChange = (args) ->
   $(".slide-selectors .item:eq(" + (args.currentSlideNumber - 1) + ")").addClass "selected"
 
 $(document).ready ->
-  $(".iosSlider").iosSlider
+  slider = $(".iosSlider")
+  slider.iosSlider
     desktopClickDrag: true
     snapToChildren: true
     infiniteSlider: true
@@ -19,3 +20,5 @@ $(document).ready ->
     scrollbarMargin: "0"
     scrollbarBorderRadius: "0"
     keyboardControls: true
+    navPrevSelector: $('#js-scrollleft')
+    navNextSelector: $('#js-scrollright')

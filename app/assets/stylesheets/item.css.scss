@@ -178,12 +178,13 @@ h1, h2{
   position: relative;
   bottom: -20px;
   width: 50%;
-  margin: 0 0 0 40%;
+  margin: 0 auto;
   z-index: 1;
   height: 10px;
+  text-align: center;
 
   .item {
-    float: left;
+    display: inline-block;
     width: 9px;
     height: 9px;
     background: #505050;
@@ -208,18 +209,22 @@ h1, h2{
   z-index: 1;
 }
 
-.scrollleft {
+.scrollleft, .scrollright {
   color: $gold_color;
   font-size: 2em;
   position: relative;
   top: 300px;
   left: -55px;
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .scrollright {
-  color: $gold_color;
-  font-size: 2em;
-  position: relative;
   top: 250px;
   left: 620px;
 }

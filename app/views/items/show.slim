@@ -9,19 +9,16 @@ h2 = @item.title
   -# a href="#{@item.url}" class="ss-icon ss-social-circle symbolset" target="_blank" Facebook
   -# a href="#{@item.url}" class="ss-icon ss-social-circle symbolset" target="_blank" Pinterest
 .detail
-  .scrollleft.ss-navigateleft
-  .scrollright.ss-navigateright
+  #js-scrollleft.scrollleft.ss-navigateleft
+  #js-scrollright.scrollright.ss-navigateright
   .iosSlider
     .slider
       - @item.photos.where(:visible => true).each do |photo|
         div class='slide' style="background-image: url(#{photo.attrs['url_fullxfull']})"
 
   .slide-selectors
-    .item.selected
-    .item
-    .item
-    .item
-    .item
+    - @item.photos.where(:visible => true).each_with_index do |photo, index|
+      span.item class="#{index == 0 ? 'selected' : ''}"
   .scrollbar
 
   .description

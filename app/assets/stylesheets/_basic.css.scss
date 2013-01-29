@@ -59,6 +59,12 @@ h2 {
   margin-top: 10px;
 }
 
+h3 {
+  font-size: 24px;
+  text-align: center;
+  margin-top: -25px;
+}
+
 .top-bar {
   height: 41px;
   background: image_url('topbar.bg.gif') repeat-x top left;
@@ -155,6 +161,6 @@ h2 {
 .content {
   padding-bottom: 200px;
   margin-left: $sidebar_width;
-  // width: $content_width;
+  min-height: 800px;
 }
 

@@ -22,10 +22,31 @@ $slate_color: #323236;
     background-position: 50% 50%;
     float: left;
     margin: 10px;
-
     &:hover {
       .info {
-        display: block;
+        @include opacity(1);
+      }
+    }
+    .info {
+      @include transition(all 0.3s ease);
+      @include opacity(0);
+      background: rgba(197, 157, 94, 0.85);
+      height: 280px;
+      width: 250px;
+      padding: 40px 35px 0px 35px;
+      position: relative;
+      .name {
+        font-size: 22px;
+        font-weight: 400;
+        color: #fff;
+      }
+      .hover-price {
+        color: #fff;
+        font-size: 30px;
+        position: absolute;
+        bottom: 15px;
+        font-weight: 600;
+        right: 35px;
       }
     }
   }
@@ -52,7 +73,7 @@ $slate_color: #323236;
 
 .detail {
   max-width: 600px;
-  width: 100%;
+  // width: 100%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 80px;
@@ -62,7 +83,23 @@ $slate_color: #323236;
   }
 }
 
+.contact {
+  text-align: center;
+  min-height: 200px;
+}
+
 .description {
+  font-size: 15px;
+  line-height: 22px;
+  font-weight: 300;
+  padding: 10% 6%;
+}
+
+.subpage {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 24px;
   font-size: 15px;
   line-height: 22px;
   font-weight: 300;
@@ -101,30 +138,6 @@ $slate_color: #323236;
   right: 0;
   .purchase a {
     display: block;
-  }
-}
-
-.info {
-  background: rgba(197, 157, 94, 0.85);
-  height: 280px;
-  width: 250px;
-  padding: 40px 35px 0px 35px;
-  position: relative;
-  display: none;
-
-  .name {
-    font-size: 22px;
-    font-weight: 400;
-    color: #fff;
-  }
-
-  .hover-price {
-    color: #fff;
-    font-size: 30px;
-    position: absolute;
-    bottom: 15px;
-    font-weight: 600;
-    right: 35px;
   }
 }
 
@@ -338,6 +351,11 @@ h1, h2{
       max-width: 400px;
     }
 
+    h3 {
+      margin-top: 0;
+      font-size: 18px;
+    }
+
     .mobile-menu {
       font-size: 1.5em;
       display: block;
@@ -450,6 +468,10 @@ h1, h2{
       margin-top: 6%;
       margin-bottom: 8px;
     }
+    h3 {
+      margin-top: 0;
+      font-size: 18px;
+    }
     .top-bar {
       display: none;
     }
@@ -516,10 +538,9 @@ h1, h2{
 
 .slide-selectors {
   position: relative;
-  bottom: 20px;
-  left: 0;
-  width: 1024px;
-  margin: 0 auto;
+  bottom: -20px;
+  width: 50%;
+  margin: 0 0 0 40%;
   z-index: 1;
   height: 10px;
 
@@ -527,14 +548,13 @@ h1, h2{
     float: left;
     width: 9px;
     height: 9px;
-    border: 1px solid #000;
-    background: #999;
+    background: #505050;
     margin: 0 0 0 10px;
     @include opacity(0.25);
     @include border-radius(100px);
 
     &.selected {
-      background: #000;
+      background: #505050;
       @include opacity(1);
     }
   }
@@ -544,7 +564,7 @@ h1, h2{
   position: relative;
   bottom: 4px;
   left: 0;
-  width: 1024px;
+  width: 100%;
   height: 4px;
   margin: 0 auto;
   z-index: 1;

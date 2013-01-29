@@ -28,7 +28,7 @@ $slate_color: #323236;
       }
     }
     .info {
-      @include transition(all 0.3s ease);
+      @include transition(all 0.4s ease);
       @include opacity(0);
       background: rgba(197, 157, 94, 0.85);
       height: 280px;

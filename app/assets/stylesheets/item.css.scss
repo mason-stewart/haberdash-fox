@@ -76,7 +76,8 @@ $slate_color: #323236;
   // width: 100%;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 80px;
+  margin-top: 30px;
+  position: relative;
   .photos {
     width: 100%;
     margin-bottom: 30px;
@@ -213,8 +214,9 @@ h1, h2{
 .scrollleft, .scrollright {
   color: $gold_color;
   font-size: 2em;
-  position: relative;
-  top: 300px;
+  position: absolute;
+  z-index: 100;
+  top: 250px;
   left: -55px;
   cursor: pointer;
   -webkit-touch-callout: none;
@@ -226,7 +228,6 @@ h1, h2{
 }
 
 .scrollright {
-  top: 250px;
   left: 620px;
 }
 

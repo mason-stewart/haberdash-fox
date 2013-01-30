@@ -622,14 +622,48 @@ h1, h2{
     padding: 0;
     margin-left: auto;
     margin-right: auto;
-    width: 320px;
+    width: 290px;
     .item {
-      width: 320px;
-      height: 320px;
+      width: 290px;
+      height: 290px;
       background-size: cover;
       background-position: 50% 50%;
       float: left;
-      margin: 10px 0;
+      margin: 20px 0;
+      .info {
+        @include transition(all 0.4s ease);
+        @include opacity(0);
+        background: rgba(197, 157, 94, 0.85);
+        height: 270px;
+        width: 250px;
+        padding: 20px 20px 0px 20px;
+        position: relative;
+      }
+    }
+  }
+
+  .iosSlider {
+    // required
+    position: relative;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 290px;
+
+    .slider {
+      // required
+      width: 100%;
+      height: 290px;
+
+      .slide {
+        // required
+        float: left;
+        width: 100%;
+        height: 300px;
+        background-position: center center;
+        background-size: cover;
+      }
     }
   }
 

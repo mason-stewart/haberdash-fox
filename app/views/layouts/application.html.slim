@@ -17,16 +17,18 @@ html
     / MailChimp Signup Form
     = stylesheet_link_tag "http://cdn-images.mailchimp.com/embedcode/slim-081711.css"
 
-
-
   body
     #js-mobile-navigation.mobile-navigation
       table
         tbody
+          tr
+            td class='home'
+             a href="http:/www.thehaberdashfox.com" Home
           - @collections.each do |collection|
             tr
               td class="#{collection.slug}"
                 = link_to collection.title, '/collection/'+collection.slug
+
 
     .container.main
       .top-bar

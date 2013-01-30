@@ -2,7 +2,7 @@ h1 = @collection.title
 .item-grid
   - @collection.items.each do |item|
     a href="/items/#{item.slug}"
-      .item style="background-image: url(#{item.photos.where(:visible => true).first.attrs['url_fullxfull']});"
+      .item style="background-image: url(#{item.photos.where(:visible => true).first.attrs['url_570xN']});"
         .info
           .name = simple_format item.title
           .hover-price $#{item.price}

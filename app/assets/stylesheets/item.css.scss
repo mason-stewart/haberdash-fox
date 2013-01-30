@@ -486,6 +486,31 @@ h1, h2{
       display: block;
     }
 
+    .iosSlider {
+      // required
+      position: relative;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      width: 100%;
+      height: 500px;
+
+      .slider {
+        // required
+        width: 100%;
+        height: 320px;
+
+        .slide {
+          // required
+          float: left;
+          width: 100%;
+          height: 500px;
+          background-position: center center;
+          background-size: cover;
+        }
+      }
+    }
+
     .item-grid {
     @include clearfix;
     padding: 7px 20px;

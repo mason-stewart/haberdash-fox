@@ -11,7 +11,7 @@ ActiveAdmin.register Collection do
   # order that jQuery submitted them
   collection_action :sort, :method => :post do
     params[:collection].each_with_index do |id, index|
-      Collection.update_all(['position=?', index+1], ['id=?', id])
+      ::Collection.update_all(['position=?', index+1], ['id=?', id])
     end
     render :nothing => true
   end

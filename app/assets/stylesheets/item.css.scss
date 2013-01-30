@@ -583,6 +583,14 @@ h1, h2{
       max-width: 400px;
     }
 
+    .slogan {
+      margin: 0px auto 0 auto;
+      display: block;
+      padding: 5%;
+      width: 90%;
+      background: #e1e0dd;
+    }
+
     h3 {
       margin-top: 0;
       font-size: 18px;
@@ -752,6 +760,15 @@ h1, h2{
   .top-bar {
     display: none;
   }
+
+  .slogan {
+    margin: 0px auto 0 auto;
+    display: block;
+    padding: 5%;
+    width: 90%;
+    background: #e1e0dd;
+  }
+
   .footer {
     display: block;
     background: #c6c4c2;

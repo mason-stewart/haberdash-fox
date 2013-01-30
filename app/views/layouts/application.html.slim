@@ -43,6 +43,9 @@ html
         = render 'layouts/navigation'
 
       .content
+        - if current_page?(:controller => 'collection', :action => 'index')
+          = link_to(image_tag('slogan.svg', :class=>"slogan"), '/')
+
         = yield
 
       .footer

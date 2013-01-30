@@ -7,8 +7,6 @@ end
 gem "jquery-rails"
 gem "unicorn", ">= 4.3.1"
 gem "pg", ">= 0.14.1"
-gem "slim", ">= 1.3.2"
-gem "haml2slim", ">= 0.4.6", :group => :development
 gem "haml", ">= 3.1.6", :group => :development
 gem "haml-rails", ">= 0.3.5", :group => :development
 gem "hpricot", ">= 0.8.6", :group => :development
@@ -25,3 +23,4 @@ gem "meta_search", ">= 1.1.0.pre"
 gem "etsy"
 gem "compass-rails"
 gem "rails-backbone"
+gem "skim"

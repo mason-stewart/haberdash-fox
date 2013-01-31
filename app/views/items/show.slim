@@ -1,4 +1,4 @@
-a href="/collection/#{@item.collection.slug}" class="back"
+a.back.top href="/collection/#{@item.collection.slug}"
   span.ss-left
   | Back
 h2.title = simple_format @item.title
@@ -23,3 +23,7 @@ h2.title = simple_format @item.title
 
   .description
     = simple_format @description
+
+  a.back.bottom href="/collection/#{@item.collection.slug}"
+    span.ss-left
+    | Back

@@ -6,6 +6,6 @@ h1
     a href="/items/#{@items[i].slug}"
       .item style="background-image: url(#{@items[i].photo});"
         .info
-          .name = @items[i].title
+          .name = @safe @items[i].title
           .hover-price $#{@items[i].price}
     - i++

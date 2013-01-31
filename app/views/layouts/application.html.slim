@@ -2,7 +2,11 @@ doctype html
 html
   head
     meta content="width=device-width, initial-scale=1.0" name="viewport"
-    title= content_for?(:title) ? yield(:title) + " - The Haberdash Fox": "A Collection of the Best Menswares on Etsy"
+    meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"
+    meta content="yes" name="apple-mobile-web-app-capable"
+    meta name="apple-mobile-web-app-title" content="Haberdash"
+
+    title= content_for?(:title) ? yield(:title) + " - The Haberdash Fox": "Haberdash Fox"
     = stylesheet_link_tag "application", :media => "all"
     = csrf_meta_tags
     = yield(:head)
@@ -13,7 +17,7 @@ html
     = stylesheet_link_tag "social/ss-social"
     = stylesheet_link_tag "standard/ss-standard"
 
-    link rel="apple-touch-icon" href="/assets/haberdash-fox-icon.png"
+    link rel="apple-touch-icon-precomposed" href="/assets/haberdash-fox-icon.png"
 
     -# / MailChimp Signup Form
     -# = stylesheet_link_tag "http://cdn-images.mailchimp.com/embedcode/slim-081711.css"
@@ -71,7 +75,7 @@ html
             collections: #{render(file: 'json/collections', object: @collections, formats: :json).html_safe},
             items: #{render(file: 'json/items', object: @items, formats: :json).html_safe}
           });
-        Backbone.history.start({pushState: true});
+        Backbone.history.start({pushState: true, silent: true});
       });
 
     javascript:

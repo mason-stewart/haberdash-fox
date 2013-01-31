@@ -489,6 +489,68 @@ h1, h2{
   /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
   @media only screen and (min-width: 500px) and (max-width: 775px) {
 
+    .item-grid {
+      @include clearfix;
+      padding: 0;
+      margin-left: auto;
+      margin-right: auto;
+      width: 344px;
+      .item {
+        width: 320px;
+        height: 320px;
+        background-size: cover;
+        background-position: 50% 50%;
+        float: left;
+        margin: 20px 0 50px 0;
+        position: relative;
+        .info {
+          opacity: 1;
+          height: 45px;
+          width: 320px;
+          position: absolute;
+          padding: 0;
+          top: 100%;
+          background: none;
+          .name {
+            font-size: 18px;
+            font-weight: 400;
+            color: $slate_color;
+            position: absolute;
+            left: 0;
+            bottom: 8px;
+             -ms-word-break: break-all;
+                 word-break: break-all;
+
+                 // Non standard for webkit
+                 word-break: break-word;
+
+            -webkit-hyphens: auto;
+               -moz-hyphens: auto;
+                    hyphens: auto;
+
+            // truncation
+            p {
+              margin: 0;
+              width: 220px;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              -o-text-overflow: ellipsis;  // for Opera 9 & 10
+            }
+          }
+          .hover-price {
+            color: $slate_color;
+            font-size: 24px;
+            position: absolute;
+            bottom: 8px;
+            font-weight: 600;
+            right: 0;
+          }
+        }
+      }
+    }
+
+
     .mobile-navigation {
       display: block;
     }
@@ -518,14 +580,6 @@ h1, h2{
       }
     }
 
-    .item-grid {
-    @include clearfix;
-    padding: 7px 20px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 344px;
-    }
-
     .back.top {
       display: none;
     }
@@ -536,6 +590,7 @@ h1, h2{
     .content {
       margin-left: auto;
       margin-right: auto;
+      padding-top: 80px;
     }
     .sidebar-top{
       margin-left: -39px;
@@ -677,7 +732,7 @@ h1, h2{
       background-size: cover;
       background-position: 50% 50%;
       float: left;
-      margin: 50px 0;
+      margin: 20px 0 50px 0;
       position: relative;
       .info {
         opacity: 1;
@@ -798,7 +853,7 @@ h1, h2{
     margin-left: auto;
     margin-right: auto;
     padding-bottom: 10%;
-    padding-top: 20%;
+    padding-top: 80px;
   }
   .sidebar-top{
     margin-left: -39px;

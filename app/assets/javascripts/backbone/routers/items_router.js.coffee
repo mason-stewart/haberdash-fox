@@ -23,15 +23,18 @@ class HaberdashFox.Routers.ItemsRouter extends Backbone.Router
 
     @view = new HaberdashFox.Views.Collections.ShowView(model: collection)
     $("#js-content").html(@view.render().el)
+    window.scrollTo(0,0)
 
   item: (slug) ->
     item = @items.get(slug)
 
     @view = new HaberdashFox.Views.Items.ShowView(model: item)
     $("#js-content").html(@view.render().el)
+    window.scrollTo(0,0)
 
   collection: (slug) ->
     collection = @collections.get(slug)
 
     @view = new HaberdashFox.Views.Collections.ShowView(model: collection)
     $("#js-content").html(@view.render().el)
+    window.scrollTo(0,0)

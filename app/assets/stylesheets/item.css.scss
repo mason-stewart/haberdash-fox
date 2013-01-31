@@ -677,7 +677,51 @@ h1, h2{
       background-size: cover;
       background-position: 50% 50%;
       float: left;
-      margin: 20px 0;
+      margin: 50px 0;
+      position: relative;
+      .info {
+        opacity: 1;
+        height: 45px;
+        width: 290px;
+        position: absolute;
+        padding: 0;
+        top: 100%;
+        background: none;
+        .name {
+          font-size: 18px;
+          font-weight: 400;
+          color: $slate_color;
+          position: absolute;
+          left: 0;
+          bottom: 8px;
+           -ms-word-break: break-all;
+               word-break: break-all;
+
+               // Non standard for webkit
+               word-break: break-word;
+
+          -webkit-hyphens: auto;
+             -moz-hyphens: auto;
+                  hyphens: auto;
+
+          p {
+            margin: 0;
+            width: 200px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -o-text-overflow: ellipsis;  // for Opera 9 & 10
+          }
+        }
+        .hover-price {
+          color: $slate_color;
+          font-size: 24px;
+          position: absolute;
+          bottom: 8px;
+          font-weight: 600;
+          right: 0;
+        }
+      }
     }
   }
 
@@ -730,6 +774,7 @@ h1, h2{
     position: fixed;
     top: 28px;
     right: 0;
+    z-index: 2;
   }
 
   .logotype {

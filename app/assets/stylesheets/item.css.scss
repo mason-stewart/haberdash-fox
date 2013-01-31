@@ -560,6 +560,7 @@ h1, h2{
       width: 100%;
       position: fixed;
       top: 0;
+      z-index: 5000;
     }
     .top-bar .top-bar-content {
       margin-left: 0px;
@@ -579,6 +580,7 @@ h1, h2{
       text-align: center;
       position: fixed;
       top: 28px;
+      z-index: 5000;
 
     }
     .menu {
@@ -717,6 +719,7 @@ h1, h2{
     text-align: center;
     position: fixed;
     top: 28px;
+    z-index: 5000;
   }
 
   .menu {
@@ -769,6 +772,7 @@ h1, h2{
     width: 100%;
     position: fixed;
     top: 0;
+    z-index: 5000;
   }
   .top-bar .top-bar-content {
     margin-left: 0px;

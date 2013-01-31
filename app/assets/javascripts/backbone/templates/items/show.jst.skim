@@ -4,7 +4,7 @@ a.back.top href="/collection/#{@collection.slug}"
 h2.title = @safe @title
 .meta
   .price $#{@price}
-  a href="#{@url}" class="purchase" target="_blank" Purchase on Etsy
+  a href="#{@url}" class="purchase" target="_blank" data-bypass="" Purchase on Etsy
 
 .detail
   #js-scrollleft.scrollleft.ss-navigateleft

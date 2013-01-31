@@ -71,7 +71,7 @@ html
             collections: #{render(file: 'json/collections', object: @collections, formats: :json).html_safe},
             items: #{render(file: 'json/items', object: @items, formats: :json).html_safe}
           });
-        Backbone.history.start({pushState: true});
+        Backbone.history.start({pushState: true, silent: true});
       });
 
     javascript:

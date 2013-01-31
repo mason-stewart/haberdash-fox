@@ -1,5 +1,11 @@
 collection @items
-attributes :title, :price, :slug, :url, :description
+node(:title) {
+  |item| simple_format item.title
+}
+node(:description) {
+  |item| simple_format item.description
+}
+attributes :price, :slug, :url
 child(:collection) {
   attributes :title, :slug
 }

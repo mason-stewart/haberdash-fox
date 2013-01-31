@@ -1,7 +1,7 @@
-a href="/collection/#{@collection.slug}" class="back"
+a.back.top href="/collection/#{@collection.slug}"
   span.ss-left
   | Back
-h2.title = @title
+h2.title = @safe @title
 .meta
   .price $#{@price}
   a href="#{@url}" class="purchase" target="_blank" Purchase on Etsy
@@ -24,4 +24,8 @@ h2.title = @title
   .scrollbar
 
   .description
-    = @description
+    = @safe @description
+
+  a.back.bottom href="/collection/#{@collection.slug}"
+    span.ss-left
+    | Back

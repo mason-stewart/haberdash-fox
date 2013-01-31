@@ -13,7 +13,7 @@ h2.title = @title
     .slider
       - i = 0
       - while i < @photos.length
-        div class='slide' style="background-image: url(#{@photos[i].attrs['url_fullxfull']})"
+        div class='slide' style="background-image: url(#{@photos[i].url})"
         - i++
 
   .slide-selectors

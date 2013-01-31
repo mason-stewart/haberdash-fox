@@ -3,22 +3,35 @@ class HaberdashFox.Routers.ItemsRouter extends Backbone.Router
     @items = new HaberdashFox.Collections.ItemsCollection()
     @items.reset options.items
 
-    console.log @items
+    @collections = new HaberdashFox.Collections.CollectionsCollection()
+    @collections.reset options.collections
 
     $(document).on "click", "a:not([data-bypass])", (evt) ->
       href = $(@).attr("href")
       protocol = @protocol + "//"
       if href.slice(protocol.length) isnt protocol
-        console.log href
         evt.preventDefault()
         window.router.navigate href, true
 
   routes:
-    "items/:slug"      : "show"
+    ""                    : "index"
+    "items/:slug"         : "item"
+    "collection/:slug"    : "collection"
 
-  show: (slug) ->
-    console.log 'running show'
+  index: ->
+    collection = @collections.first()
+
+    @view = new HaberdashFox.Views.Collections.ShowView(model: collection)
+    $("#js-content").html(@view.render().el)
+
+  item: (slug) ->
     item = @items.get(slug)
 
     @view = new HaberdashFox.Views.Items.ShowView(model: item)
+    $("#js-content").html(@view.render().el)
+
+  collection: (slug) ->
+    collection = @collections.get(slug)
+
+    @view = new HaberdashFox.Views.Collections.ShowView(model: collection)
     $("#js-content").html(@view.render().el)

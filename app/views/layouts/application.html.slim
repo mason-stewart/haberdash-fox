@@ -2,9 +2,8 @@ doctype html
 html
   head
     meta content="width=device-width, initial-scale=1.0" name="viewport"
-    title= content_for?(:title) ? yield(:title) : "A Collection of the Best Menswares on Etsy"
+    title= content_for?(:title) ? yield(:title) + " - The Haberdash Fox": "A Collection of the Best Menswares on Etsy"
     = stylesheet_link_tag "application", :media => "all"
-    = javascript_include_tag "application"
     = csrf_meta_tags
     = yield(:head)
     script type="text/javascript" src="//use.typekit.net/ask0gfq.js"
@@ -39,12 +38,12 @@ html
       .top-nav
         = link_to(image_tag('haberdash-logotype.svg', :class=>"logotype"), '/')
       .menu
-        a#js-mobile-navigation-button href="#" class="ss-icon ss-standard mobile-menu" rows
+        a#js-mobile-navigation-button href="#" class="ss-rows mobile-menu"
       .sidebar
         img src="/assets/sidebar-top.png" class="sidebar-top"
         = render 'layouts/navigation'
 
-      .content
+      .content#js-content
         - if current_page?(:controller => 'collection', :action => 'index')
           = link_to(image_tag('slogan.svg', :class=>"slogan"), '/')
 
@@ -61,6 +60,19 @@ html
 
         .bottom-bar
           | A Collection Of The Best Menswares On Etsy
+
+    = javascript_include_tag "application"
+
+    javascript:
+      $(function() {
+        // Blog is the app name
+        window.router = new HaberdashFox.Routers.ItemsRouter(
+          {
+            collections: #{render(file: 'json/collections', object: @collections, formats: :json).html_safe},
+            items: #{render(file: 'json/items', object: @items, formats: :json).html_safe}
+          });
+        Backbone.history.start({pushState: true});
+      });
 
     javascript:
       var _gaq = _gaq || [];

@@ -9,7 +9,7 @@ if defined?(Bundler)
   # Bundler.require(:default, :assets, Rails.env)
 end
 
-module HaberdasherFox
+module HaberdashFox
   class Application < Rails::Application
 
     # don't generate RSpec tests for views and helpers

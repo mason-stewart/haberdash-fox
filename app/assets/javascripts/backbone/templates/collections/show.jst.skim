@@ -1,0 +1,11 @@
+h1 
+  = @title
+.item-grid
+  - i = 0
+  - while i < @items.length
+    a href="/items/#{@items[i].slug}"
+      .item style="background-image: url(#{@items[i].photo});"
+        .info
+          .name = @items[i].title
+          .hover-price $#{@items[i].price}
+    - i++

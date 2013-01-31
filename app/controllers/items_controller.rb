@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
 
   def nav_setup
     @collections = Collection.all
+    @items = Item.all
   end
 
   # GET /items/:slug

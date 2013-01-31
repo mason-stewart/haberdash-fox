@@ -1,0 +1,27 @@
+a href="/collection/#{@collection.slug}" class="back"
+  span.ss-left
+  | Back
+h2.title = @title
+.meta
+  .price $#{@price}
+  a href="#{@url}" class="purchase" target="_blank" Purchase on Etsy
+
+.detail
+  #js-scrollleft.scrollleft.ss-navigateleft
+  #js-scrollright.scrollright.ss-navigateright
+  .iosSlider
+    .slider
+      - i = 0
+      - while i < @photos.length
+        div class='slide' style="background-image: url(#{@photos[i].url})"
+        - i++
+
+  .slide-selectors
+    - i = 0
+    - while i < @photos.length
+      span.item class="#{i == 0 ? 'selected' : ''}"
+      - i++
+  .scrollbar
+
+  .description
+    = @description

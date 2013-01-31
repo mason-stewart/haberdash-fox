@@ -2,7 +2,7 @@ doctype html
 html
   head
     meta content="width=device-width, initial-scale=1.0" name="viewport"
-    title= content_for?(:title) ? yield(:title) : "Haberdash Fox"
+    title= content_for?(:title) ? yield(:title) + " - The Haberdash Fox": "A Collection of the Best Menswares on Etsy"
     = stylesheet_link_tag "application", :media => "all"
     = csrf_meta_tags
     = yield(:head)
@@ -13,6 +13,8 @@ html
     = stylesheet_link_tag "social/ss-social"
     = stylesheet_link_tag "standard/ss-standard"
 
+    link rel="apple-touch-icon" href="haberdash-fox-icon.png"
+
     / MailChimp Signup Form
     = stylesheet_link_tag "http://cdn-images.mailchimp.com/embedcode/slim-081711.css"
 
@@ -22,7 +24,7 @@ html
         tbody
           tr
             td class='home'
-             a href="http:/www.thehaberdashfox.com" Home
+             a href="/" Home
           - @collections.each do |collection|
             tr
               td class="#{collection.slug}"

@@ -519,7 +519,7 @@ h1, h2{
     width: 344px;
     }
 
-    .back {
+    .back.top {
       display: none;
     }
 
@@ -700,9 +700,10 @@ h1, h2{
     }
   }
 
-  .back {
+  .back.top {
     display: none;
   }
+
 
   .top-nav {
     display: block;

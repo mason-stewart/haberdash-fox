@@ -9,5 +9,6 @@ class PagesController < ApplicationController
 
   def nav_setup
     @collections = Collection.all
+    @items = Item.all
   end
 end

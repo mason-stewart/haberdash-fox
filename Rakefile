@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-HaberdasherFox::Application.load_tasks
+HaberdashFox::Application.load_tasks

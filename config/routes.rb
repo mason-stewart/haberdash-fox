@@ -1,4 +1,4 @@
-HaberdasherFox::Application.routes.draw do
+HaberdashFox::Application.routes.draw do
   get "items/index"
 
   ActiveAdmin.routes(self)

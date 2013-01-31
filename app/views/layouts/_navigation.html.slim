@@ -2,7 +2,7 @@
 
 ul.nav-list
   li
-    a href="http://www.thehaberdashfox.com" class="ss-icon"  home
+    a href="/" class="ss-icon"  home
   - @collections.each do |collection|
     li
       = link_to collection.title, '/collection/'+collection.slug

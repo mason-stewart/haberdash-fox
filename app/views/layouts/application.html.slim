@@ -2,7 +2,7 @@ doctype html
 html
   head
     meta content="width=device-width, initial-scale=1.0" name="viewport"
-    title= content_for?(:title) ? yield(:title) : "Haberdasher Fox"
+    title= content_for?(:title) ? yield(:title) : "Haberdash Fox"
     = stylesheet_link_tag "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
@@ -42,7 +42,7 @@ html
         img src="/assets/sidebar-top.png" class="sidebar-top"
         = render 'layouts/navigation'
 
-      .content
+      .content#js-content
         - if current_page?(:controller => 'collection', :action => 'index')
           = link_to(image_tag('slogan.svg', :class=>"slogan"), '/')
 
@@ -59,6 +59,13 @@ html
 
         .bottom-bar
           | A Collection Of The Best Menswares On Etsy
+
+    javascript:
+      $(function() {
+        // Blog is the app name
+        window.router = new HaberdashFox.Routers.ItemsRouter({items: #{@items.to_json(:include => [:collection, :photos]).html_safe}});
+        Backbone.history.start({pushState: true});
+      });
 
     javascript:
       var _gaq = _gaq || [];

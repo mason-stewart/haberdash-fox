@@ -19,7 +19,7 @@ h2.title = @safe @title
   .slide-selectors
     - i = 0
     - while i < @photos.length
-      span.item class="#{i == 0 ? 'selected' : ''}"
+      span.item class="#{if i == 0 then  'selected' else ''}"
       - i++
   .scrollbar
 

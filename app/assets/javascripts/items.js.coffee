@@ -14,7 +14,7 @@ $(document).ready ->
     infiniteSlider: true
     navSlideSelector: ".slide-selectors .item"
     onSlideChange: slideChange
-    autoSlide: true
+    autoSlide: false
     scrollbar: true
     scrollbarContainer: ".scrollbar"
     scrollbarMargin: "0"

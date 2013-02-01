@@ -304,6 +304,10 @@ h1, h2{
       background: $gold-color;
     }
 
+    &.weekend-gear {
+      display: none;
+    }
+
     &.clothing {
       background: lighten( $gold-color, 5% );
     }
@@ -888,9 +892,9 @@ h1, h2{
   }
 
   .slogan {
-    margin: 0px auto 0 auto;
+    margin: -2px auto 0 auto;
     display: block;
-    padding: 5%;
+    padding: 3% 5%;
     width: 90%;
     background: #e1e0dd;
   }

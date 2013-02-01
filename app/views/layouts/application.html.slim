@@ -34,7 +34,6 @@ html
               td class="#{collection.slug}"
                 = link_to collection.title, '/collection/'+collection.slug
 
-
     .container.main
       .top-bar
         .top-bar-content
@@ -55,12 +54,12 @@ html
 
       .footer
         ul.submenu
-          li
-            a href="/about" About
-          li
-            a href="http://twitter.com/haberdashfox" target="_blank" Twitter
-          li
-            a href="/contact" Contact
+        li 
+          a href="/about" data-bypass="" About
+        li 
+          a href="http://twitter.com/haberdashfox" target="_blank" data-bypass="" Twitter
+        li
+          a href="/contact" data-bypass="" Contact
 
         .bottom-bar
           | A Collection Of The Best Menswares On Etsy

@@ -6,6 +6,8 @@ class HaberdashFox.Routers.ItemsRouter extends Backbone.Router
     @collections = new HaberdashFox.Collections.CollectionsCollection()
     @collections.reset options.collections
 
+    @bind 'all', @_trackPageview
+
     $(document).on "click", "a:not([data-bypass])", (evt) ->
       href = $(@).attr("href")
       protocol = @protocol + "//"
@@ -40,6 +42,11 @@ class HaberdashFox.Routers.ItemsRouter extends Backbone.Router
     @view = new HaberdashFox.Views.Collections.ShowView(model: collection)
     $("#js-content").html(@view.render().el)
     window.scrollTo(0,0)
+
+  _trackPageview: ->
+    url = Backbone.history.getFragment()
+    _gaq.push(['_trackPageview', "/#{url}"])
+
 
   initSlider: ->
     slider = $(".iosSlider")

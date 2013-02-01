@@ -42,7 +42,6 @@ class HaberdashFox.Routers.ItemsRouter extends Backbone.Router
     window.scrollTo(0,0)
 
   initSlider: ->
-    console.log 'calling init slider'
     slider = $(".iosSlider")
     slider.iosSlider
       desktopClickDrag: true

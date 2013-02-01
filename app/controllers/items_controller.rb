@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
   before_filter :nav_setup
+  caches_action :nav_setup, :show
+  cache_sweeper :item_sweeper
 
   def nav_setup
     @collections = Collection.all

@@ -27,3 +27,4 @@ gem "skim"
 gem "temple", "0.4.0"
 gem 'rabl'
 gem 'oj'
+gem 'newrelic_rpm'

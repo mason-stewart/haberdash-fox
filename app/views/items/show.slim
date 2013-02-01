@@ -5,12 +5,11 @@ h2.title = simple_format @item.title
 .meta
   .price $#{@item.price}
   a href="#{@item.url}" class="purchase" target="_blank" data-bypass="" Purchase on Etsy
-  -# a href="#{@item.url}" class="ss-icon ss-social-circle symbolset" target="_blank" Twitter
-  -# a href="#{@item.url}" class="ss-icon ss-social-circle symbolset" target="_blank" Facebook
-  -# a href="#{@item.url}" class="ss-icon ss-social-circle symbolset" target="_blank" Pinterest
+
 .detail
-  #js-scrollleft.scrollleft.ss-navigateleft
-  #js-scrollright.scrollright.ss-navigateright
+  -if @item.photos.where(:visible => true).length > 1
+    #js-scrollleft.scrollleft.ss-navigateleft
+    #js-scrollright.scrollright.ss-navigateright
   .iosSlider
     .slider
       - @item.photos.where(:visible => true).each do |photo|

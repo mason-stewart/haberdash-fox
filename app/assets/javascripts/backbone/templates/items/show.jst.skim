@@ -7,8 +7,9 @@ h2.title = @safe @title
   a href="#{@url}" class="purchase" target="_blank" data-bypass="" Purchase on Etsy
 
 .detail
-  #js-scrollleft.scrollleft.ss-navigateleft
-  #js-scrollright.scrollright.ss-navigateright
+  -if @photos.length > 1
+    #js-scrollleft.scrollleft.ss-navigateleft
+    #js-scrollright.scrollright.ss-navigateright
   .iosSlider
     .slider
       - i = 0

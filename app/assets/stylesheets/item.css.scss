@@ -304,10 +304,6 @@ h1, h2{
       background: $gold-color;
     }
 
-    &.weekend-gear {
-      display: none;
-    }
-
     &.clothing {
       background: lighten( $gold-color, 5% );
     }

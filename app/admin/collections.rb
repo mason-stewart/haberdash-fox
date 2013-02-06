@@ -15,4 +15,13 @@ ActiveAdmin.register Collection do
     end
     render :nothing => true
   end
+
+  form do |f|
+    f.inputs "Collection Details" do
+      f.input :title
+      f.input :slug
+      f.input :active
+    end
+    f.buttons
+  end
 end

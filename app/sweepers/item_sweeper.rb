@@ -18,6 +18,5 @@ class ItemSweeper < ActionController::Caching::Sweeper
     # Currently just clearing the whole cache when something is changed.
     # This needs to be refactored to a more granular approach.
     Rails.cache.clear
-    logger.info "ItemSweeper: Cleared Rails cache."
   end
 end

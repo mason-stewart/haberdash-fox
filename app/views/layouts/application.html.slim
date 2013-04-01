@@ -22,10 +22,6 @@ html
     link rel="apple-touch-icon-precomposed" href="/assets/haberdash-fox-icon.png"
     link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico"
 
-
-    -# / MailChimp Signup Form
-    -# = stylesheet_link_tag "http://cdn-images.mailchimp.com/embedcode/slim-081711.css"
-
   body
     #js-mobile-navigation.mobile-navigation
       table
@@ -52,12 +48,16 @@ html
 
       .content#js-content
         - if current_page?(:controller => 'collection', :action => 'index')
-          = link_to(image_tag('cut.jpg', :class=>"slogan"), '/')
+          = link_to(image_tag('favorite100.jpg', :class=>"slogan"), '/')
 
         = yield
 
       .footer
         ul.submenu
+          li
+            a href="http://eepurl.com/xunjT" target="_blank" data-bypass="" Join the Mailing List
+          li
+            a href="http://haberdashfox.tumblr.com" target="_blank" data-bypass="" Blog
           li 
             a href="/about" data-bypass="" About
           li 

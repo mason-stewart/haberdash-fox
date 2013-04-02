@@ -145,6 +145,28 @@ $slate_color: #323236;
   position: relative;
 }
 
+.box {
+  background: #ecebe9;
+  height: 43px;
+  width: 100%;
+  padding: 15px 0;
+  margin-top: 50px;
+  border-radius: 3px;
+  .text {
+    float: left;
+    width: 60%;
+    padding-top: 12px;
+    font-size: 15px;
+    margin-left: 25px;
+  }
+  .purchase {
+    float: right;
+    position: relative;
+    font-size: 15px;
+    margin-right: 25px;
+  }
+}
+
 .price {
   font-size: 34px;
   font-weight: 600;
@@ -363,6 +385,27 @@ h1, h2{
       }
     .footer {
       display: none;
+    }
+    .box {
+      background: #ecebe9;
+      height: 43px;
+      width: 100%;
+      padding: 15px 0;
+      margin-top: 50px auto 0 auto;
+      border-radius: 3px;
+      .text {
+        float: left;
+        width: 52%;
+        padding-top: 4px;
+        font-size: 15px;
+        margin-left: 25px;
+      }
+      .purchase {
+        float: right;
+        position: relative;
+        font-size: 15px;
+        margin-right: 25px;
+      }
     }
   }
 
@@ -719,6 +762,27 @@ h1, h2{
 
   .mobile-navigation {
     display: block;
+  }
+
+  .box {
+    background: #ecebe9;
+    height: 43px;
+    width: 100%;
+    padding: 15px 0;
+    margin-top: 50px auto 0 auto;
+    border-radius: 3px;
+    .text {
+      float: left;
+      width: 45%;
+      font-size: 14px;
+      margin-left: 15px;
+    }
+    .purchase {
+      float: right;
+      position: relative;
+      font-size: 14px;
+      margin-right: 15px;
+    }
   }
 
   .item-grid {

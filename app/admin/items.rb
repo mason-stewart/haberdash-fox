@@ -44,19 +44,15 @@ ActiveAdmin.register Item do
       :style => "background-image: url(#{item.photos.where(:visible => true).first.attrs['url_fullxfull']});",
       :class => 'grid-link'
     div :class => 'grid-bg'
-      h5 "#{item.title}", :class => 'grid-info', :style => 'top: 15px; font-size: 22px;'
-      h5 "$#{item.price}", :class => 'grid-info', :style => 'top: 80px; font-size: 30px;'
-      h5 'Collection', :class => 'grid-info', :style => 'top: 130px;'
-      h5 "#{item.collection.nil? ? 'None' : item.collection.title}",
-         :class => 'grid-info',
-         :style => 'top: 150px; font-size: 22px;'
+    h5 "#{item.title}", :class => 'grid-info', :style => 'top: 15px; font-size: 14px;'
+    h5 "$#{item.price}", :class => 'grid-info', :style => 'top: 80px; font-size: 20px;'
   end
 
   form do |f|
     f.inputs "Item Details" do
       f.input :etsy_id, :label => 'Etsy ID'
-      f.input :collection
       f.input :title
+      f.input :collections
       f.input :slug
       f.input :description
       f.input :price
@@ -76,6 +72,11 @@ ActiveAdmin.register Item do
     attributes_table do
       row :etsy_id
       row :title
+      row "Collections" do
+        item.collections.each do |collection|
+          div collection.title
+        end
+      end
       row :slug
       row :description
       row :price

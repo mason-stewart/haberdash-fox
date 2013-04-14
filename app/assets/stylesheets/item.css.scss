@@ -773,15 +773,16 @@ h1, h2{
     border-radius: 3px;
     .text {
       float: left;
-      width: 45%;
+      width: 50%;
       font-size: 13px;
-      margin-left: 15px;
+      margin-left: 12px;
     }
     .purchase {
       float: right;
       position: relative;
       font-size: 14px;
-      margin-right: 15px;
+      margin-right: 12px;
+      padding: 10px
     }
   }
 

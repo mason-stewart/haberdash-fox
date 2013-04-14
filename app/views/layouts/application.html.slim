@@ -47,8 +47,11 @@ html
         = render 'layouts/navigation'
 
       .content#js-content
-        - if current_page?(:controller => 'collection', :action => 'index')
+        -unless @is_home
           = link_to(image_tag('bike.jpg', :class=>"slogan"), '/')
+
+        / - if current_page?(:controller => 'collection', :action => 'index')
+        /   = link_to(image_tag('bike.jpg', :class=>"slogan"), '/')
 
         = yield
 

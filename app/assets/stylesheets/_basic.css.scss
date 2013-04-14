@@ -177,10 +177,10 @@ p {
 }
 
 .slogan {
-  margin: -23px auto 0 auto;
+  margin: -23px auto -100px auto;
   display: block;
-  // padding: 5%;
   width: 100%;
-  // background: #e1e0dd;
+  position: relative;
+  z-index: 500;
 }
 

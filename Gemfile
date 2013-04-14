@@ -1,9 +1,6 @@
 source "https://rubygems.org"
+
 gem "rails", "3.2.12"
-group :assets do
-  gem "coffee-rails", "~> 3.2.1"
-  gem "uglifier", ">= 1.0.3"
-end
 gem "jquery-rails"
 gem "unicorn", ">= 4.3.1"
 gem "pg", ">= 0.14.1"
@@ -28,3 +25,15 @@ gem "temple", "0.4.0"
 gem 'rabl'
 gem 'oj'
 gem 'newrelic_rpm'
+
+group :assets do
+  gem "coffee-rails", "~> 3.2.1"
+  gem "uglifier", ">= 1.0.3"
+end
+
+group :development do
+  gem 'database_cleaner'
+  gem 'guard-rspec'
+  gem 'rb-fsevent', '~> 0.9'
+  gem 'terminal-notifier-guard'
+end

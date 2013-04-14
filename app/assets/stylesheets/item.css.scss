@@ -698,11 +698,11 @@ h1, h2{
     }
 
     .slogan {
-      margin: 0px auto 0 auto;
+      margin: 0px auto -82px auto;
       display: block;
-      // padding: 5%;
       width: 100%;
-      // background: #e1e0dd;
+      position: relative;
+      z-index: 500;
     }
 
     h3 {
@@ -774,7 +774,7 @@ h1, h2{
     .text {
       float: left;
       width: 45%;
-      font-size: 14px;
+      font-size: 13px;
       margin-left: 15px;
     }
     .purchase {
@@ -952,11 +952,11 @@ h1, h2{
   }
 
   .slogan {
-    margin: -2px auto 0 auto;
+    margin: -2px auto -60px auto;
     display: block;
-    // padding: 3% 5%;
     width: 100%;
-    // background: #e1e0dd;
+    position: relative;
+    z-index: 500;
   }
 
   .footer {

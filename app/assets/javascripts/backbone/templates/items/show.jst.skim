@@ -30,3 +30,7 @@ h2.title = @safe @title
   a.back.bottom href="/collection/#{@collection.slug}"
     span.ss-left
     | Back
+
+  .box 
+    .text We'll email you when a new collection is released.
+    a href="http://eepurl.com/xunjT" class="purchase" target="_blank" data-bypass="" Join the Newsletter

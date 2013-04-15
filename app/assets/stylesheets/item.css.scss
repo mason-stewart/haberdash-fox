@@ -13,15 +13,18 @@ $slate_color: #323236;
 
 .item-grid {
   @include clearfix;
-  padding: 7px 20px;
+  // padding: 5%;
+  text-align: center;
 
   .item {
+    display: inline-block;
     width: 320px;
     height: 320px;
     background-size: cover;
     background-position: 50% 50%;
-    float: left;
-    margin: 10px;
+    vertical-align: top;
+    // float: left;
+    margin: 15px;
     &:hover {
       .info {
         @include opacity(1);
@@ -369,18 +372,8 @@ h1, h2{
   /* Smaller than standard 960 (devices and browsers) */
   @media only screen and (max-width: 1403px) {
     .item-grid {
-      @include clearfix;
-      // padding: 7px 20px;
-      margin-left: auto;
-      margin-right: auto;
-      width: 680px;
       .item {
-        width: 320px;
-        height: 320px;
-        background-size: cover;
-        background-position: 50% 50%;
-        float: left;
-        margin: 10px;
+        margin: 15px;
         }
       }
     .footer {
@@ -415,16 +408,10 @@ h1, h2{
     display: none;
     }
   .item-grid {
-    @include clearfix;
-    margin-left: auto;
-    margin-right: auto;
-    width: 680px;
     .item {
       width: 300px;
       height: 300px;
-      background-size: cover;
-      background-position: 50% 50%;
-      float: left;
+      display: inline-block;
       margin: 10px;
       .info {
         background: rgba(197, 157, 94, 0.85);
@@ -482,17 +469,14 @@ h1, h2{
     }
   .item-grid {
     @include clearfix;
-    // padding: 7px 20px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 340px;
+    padding: 7px 20px;
     .item {
       width: 320px;
       height: 320px;
       background-size: cover;
       background-position: 50% 50%;
-      float: left;
-      margin: 10px;
+      display: inline-block;
+      margin: 15px;
       }
     }
 
@@ -533,19 +517,15 @@ h1, h2{
   @media only screen and (min-width: 500px) and (max-width: 775px) {
 
     .item-grid {
-      @include clearfix;
       padding: 0;
-      margin-left: auto;
-      margin-right: auto;
-      width: 344px;
       .item {
         width: 320px;
         height: 320px;
         background-size: cover;
         background-position: 50% 50%;
-        float: left;
-        margin: 20px 0 50px 0;
+        margin: 35px 15px;
         position: relative;
+        display: inline-block;
         .info {
           opacity: 1;
           height: 45px;
@@ -787,18 +767,14 @@ h1, h2{
   }
 
   .item-grid {
-    @include clearfix;
     padding: 0;
-    margin-left: auto;
-    margin-right: auto;
-    width: 290px;
     .item {
+      display: inline-block;
       width: 290px;
       height: 290px;
       background-size: cover;
       background-position: 50% 50%;
-      float: left;
-      margin: 20px 0 50px 0;
+      margin: 35px 15px;
       position: relative;
       .info {
         opacity: 1;

@@ -19,12 +19,12 @@ class Item < ActiveRecord::Base
   end
 
 
-  attr_accessible :description, :price, :title, :url, :etsy_id, :collection_id, :photos_attributes, :slug
+  attr_accessible :description, :price, :title, :url, :etsy_id, :collection_id, :collection_ids, :photos_attributes, :slug
 
   validates :etsy_id, :presence => true
   validates :etsy_id, :uniqueness => true
 
-  belongs_to :collection
+  has_and_belongs_to_many :collections
   has_many :photos, :dependent => :destroy
 
   # Necessary for Formtastic to do nested forms.

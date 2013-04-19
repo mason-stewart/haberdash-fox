@@ -1,6 +1,3 @@
-a.back.top href="/collection/#{@collection.slug}"
-  span.ss-left
-  | Back
 h2.title = @safe @title
 .meta
   .price $#{@price}
@@ -27,10 +24,22 @@ h2.title = @safe @title
   .description
     = @safe @description
 
-  a.back.bottom href="/collection/#{@collection.slug}"
-    span.ss-left
-    | Back
+  .back.bottom
+    | Featured in the 
+    - i = 0
+    - max = @collections.length
+    - while i < max
+      a href="/collection/#{@collections[i].slug}" = @collections[i].title
+      - if ((max > 2) and (max != i + 1))
+        | ,&nbsp;
+      - else
+        | &nbsp;
+      - if (max > 1) and (max - 2 == i)
+        | and&nbsp;
+      - i++
+    | collection
+    = if max > 1 then 's.' else '.'
 
-  .box 
+  .box
     .text We'll email you when a new collection is released.
     a href="http://eepurl.com/xunjT" class="purchase" target="_blank" data-bypass="" Join the Newsletter

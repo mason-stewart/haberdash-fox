@@ -67,14 +67,18 @@ $slate_color: #323236;
 .back {
   font-size: 18px;
   font-weight: 400;
-  color: #b05e27;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
   display: block;
   padding: 21px 0px 4px 0;
-  width: 62px;
-  &:hover {
+  // width: 62px;
+
+  a {
+    color: #b05e27;
+  }
+
+  a:hover {
     @include box-shadow(#e3e1df 0px -5px inset);
   }
   .ss-left {

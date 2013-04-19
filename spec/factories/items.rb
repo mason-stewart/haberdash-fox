@@ -2,10 +2,10 @@
 
 FactoryGirl.define do
   factory :item do
-    title "MyString"
-    description "MyText"
-    photo "MyString"
+    title "Cool Used Jacket"
+    description "So hipster, it hurts. Cowabunga, dudes!"
     price 1
-    url "MyString"
+    # url "http://www.etsy.com/listing/44652014/mothers-day-card-you-are-braver-than-you"
+    # etsy_id "44652014"
   end
 end

@@ -1,6 +1,3 @@
-a.back.top href="/collection/#{@item.collection.slug}"
-  span.ss-left
-  | Back
 h2.title = simple_format @item.title
 .meta
   .price $#{@item.price}
@@ -23,9 +20,18 @@ h2.title = simple_format @item.title
   .description
     = simple_format @description
 
-  a.back.bottom href="/collection/#{@item.collection.slug}"
-    span.ss-left
-    | Back
+  .back.bottom
+    | Featured in the 
+    - @item.collections.each_with_index do |collection, index|
+      a href="/collection/#{collection.slug}" = collection.title
+      - if (@item.collections.length > 2) and (@item.collections.length != index + 1)
+        | ,&nbsp;
+      - else
+        | &nbsp;
+      - if (@item.collections.length > 1) and (@item.collections.length - 2 == index)
+        | and&nbsp;
+    | collection
+    = @item.collections.length > 1 ? 's.' : '.'
 
   .box 
     .text We'll email you when a new collection is released.

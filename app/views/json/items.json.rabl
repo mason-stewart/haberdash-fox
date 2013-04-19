@@ -6,7 +6,7 @@ node(:description) {
   |item| simple_format item.description
 }
 attributes :price, :slug, :url
-child(:collection) {
+child(:collections) {
   attributes :title, :slug
 }
 child(:photos) {

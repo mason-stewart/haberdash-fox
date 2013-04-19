@@ -10,7 +10,7 @@ class PagesController < ApplicationController
   end
 
   def nav_setup
-    @collections = Collection.all
-    @items = Item.all
+    @collections = Collection.includes(:items => :photos).all
+    @items = Item.includes(:collections).includes(:photos).all
   end
 end

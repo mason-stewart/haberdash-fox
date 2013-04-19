@@ -4,13 +4,13 @@ class ItemsController < ApplicationController
   cache_sweeper :item_sweeper
 
   def nav_setup
-    @collections = Collection.all
-    @items = Item.all
+    @collections = Collection.includes(:items => :photos).all
+    @items = Item.includes(:collections).includes(:photos).all
   end
 
   # GET /items/:slug
   def show
-    @item = Item.find_last_by_slug params[:slug]
+    @item = Item.includes(:collections).includes(:photos).find_last_by_slug params[:slug]
 
     @description = @item.description.gsub( %r{http://[^\s<]+} ) do |url|
       "<a href='#{url}'>#{url}</a>"

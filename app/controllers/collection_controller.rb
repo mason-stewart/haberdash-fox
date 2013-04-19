@@ -4,19 +4,19 @@ class CollectionController < ApplicationController
   cache_sweeper :item_sweeper
 
   def nav_setup
-    @collections = Collection.all
-    @items = Item.all
+    @collections = Collection.includes(:items => :photos).all
+    @items = Item.includes(:collections).includes(:photos).all
   end
 
   # GET /
   def index
-    @collection = Collection.first
+    @collection = Collection.includes(:items => :photos).first
     render :show
   end
 
   # GET /:collection
   def show
-    @collection = Collection.find_last_by_slug params[:slug]
+    @collection = Collection.includes(:items => :photos).find_last_by_slug params[:slug]
     render :show
   end
 end

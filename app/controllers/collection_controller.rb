@@ -9,13 +9,13 @@ class CollectionController < ApplicationController
 
   # GET /
   def index
-    @collection = Collection.includes(:items => :photos).first
+    @collection = Collection.includes(:items).first
     render :show
   end
 
   # GET /collection/:slug
   def show
-    @collection = Collection.includes(:items => :photos).find_last_by_slug params[:slug]
+    @collection = Collection.includes(:items).find_last_by_slug params[:slug]
 
     respond_to do |format|
       format.html

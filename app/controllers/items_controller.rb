@@ -9,7 +9,7 @@ class ItemsController < ApplicationController
 
   # GET /items/:slug
   def show
-    @item = Item.includes(:collections).includes(:photos).find_last_by_slug params[:slug]
+    @item = Item.includes(:collections).find_last_by_slug params[:slug]
 
     @description = @item.description.gsub( %r{http://[^\s<]+} ) do |url|
       "<a href='#{url}'>#{url}</a>"

@@ -15,9 +15,11 @@ class HaberdashFox.Routers.ItemsRouter extends Backbone.Router
 
 
     HaberdashFox.CachedImages = []
-    throttledScroll = _.throttle(loadVisibleImages, 500)
+
+    throttledScroll = _.throttle((-> loadVisibleImages('.slide, .item')), 500)
     $(window).on 'scroll', throttledScroll
-    $ -> loadVisibleImages()
+
+    $ -> loadVisibleImages('.slide, .item')
 
   routes:
     ""                    : "index"
@@ -28,8 +30,10 @@ class HaberdashFox.Routers.ItemsRouter extends Backbone.Router
     @collection(HaberdashFox.FeaturedCollectionSlug)
 
   item: (slug) ->
+    # If we already have it in the collection, just render it
     if item = @items.get(slug)
       @renderItem(item)
+    # otherwise fetch it
     else
       item = new HaberdashFox.Models.Item slug: slug
       item.fetch
@@ -41,12 +45,15 @@ class HaberdashFox.Routers.ItemsRouter extends Backbone.Router
     @view = new HaberdashFox.Views.Items.ShowView(model: item)
     $("#js-content").html(@view.render().el)
     window.scrollTo(0,0)
+    # lazy load all slides to load
     loadVisibleImages()
-    @initSlider()
+    @initSlider('.slide')
 
   collection: (slug) ->
+    # If we already have it in the collection, just render it
     if collection = @collections.get(slug)
       @renderCollection(collection)
+    # otherwise fetch it
     else
       collection = new HaberdashFox.Models.Collection slug: slug
       collection.fetch
@@ -58,7 +65,8 @@ class HaberdashFox.Routers.ItemsRouter extends Backbone.Router
     @view = new HaberdashFox.Views.Collections.ShowView(model: collection)
     $("#js-content").html(@view.render().el)
     window.scrollTo(0,0)
-    loadVisibleImages()
+    # lazy load all item images
+    loadVisibleImages('.item')
 
   _trackPageview: ->
     url = Backbone.history.getFragment()
@@ -101,23 +109,41 @@ class HaberdashFox.Routers.ItemsRouter extends Backbone.Router
     $(".slide-selectors .item").removeClass "selected"
     $(".slide-selectors .item:eq(" + (args.currentSlideNumber - 1) + ")").addClass "selected"
 
-loadVisibleImages = ->
-  $(".item").each ->
-    unless $(@).attr('style')
-      if inView($(this), 300)
-        $(@).parent().addClass('loading')
-        if HaberdashFox.CachedImages[$(@).attr('data-src')]
-          $(@).attr('style', "background-image: url(#{$(@).attr('data-src')});" )
-        else
-          $('<img/>').attr('src', $(@).attr("data-src")).load =>
-            $(@).attr('style', "background-image: url(#{$(@).attr('data-src')});" )
-            HaberdashFox.CachedImages.push $(@).attr('data-src')
+loadVisibleImages = (selector) ->
+  $(selector).not('loaded').each ->
 
-inView = (elem, nearThreshold) ->
+    # store the element, its data-src, and its current style attribute
+    el = $(@)
+    imageUrl = el.attr('data-src')
+    currentStyle = el.attr('style') || ''
+
+    # if it's within 300px above or below the viewport
+    if inView($(this), 300)
+
+      # add the loading gif to the parent <a>
+      el.parent('a').addClass('loading')
+
+      # this allows us to call $.load() conditionally
+      if HaberdashFox.CachedImages[imageUrl]
+        el.attr('style', "background-image: url(#{imageUrl});" )
+      else
+        # we didn't find the url in the CachedImages array, so preload it
+        # with $.load() and set the background-image on the el in
+        # the $.load() callback
+        $('<img/>').attr('src', imageUrl).load =>
+          el.addClass('loaded').attr('style', "background-image: url(#{imageUrl}); " + currentStyle )
+
+          # add this url to this array to prevent calling $.load()
+          # again for the same image.
+          HaberdashFox.CachedImages.push imageUrl
+
+# Checks the proximity of an element to the viewport.
+# Thanks to Pamela Fox for this!
+inView = (el, nearThreshold) ->
   viewportHeight = $(window).height()
-  scrollTop = ((if document.documentElement.scrollTop then document.documentElement.scrollTop else document.body.scrollTop))
-  elemTop = elem.offset().top
-  elemHeight = elem.height()
+  scrollTop = $(document).scrollTop()
+  elTop = el.offset().top
+  elHeight = el.height()
   nearThreshold = nearThreshold or 0
-  return true  if (scrollTop + viewportHeight + nearThreshold) > (elemTop + elemHeight)
+  return true if (scrollTop + viewportHeight + nearThreshold) > (elTop + elHeight)
   false

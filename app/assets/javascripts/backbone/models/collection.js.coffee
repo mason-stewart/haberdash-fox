@@ -1,6 +1,7 @@
 class HaberdashFox.Models.Collection extends Backbone.Model
   paramRoot: 'item'
   idAttribute: 'slug'
+  urlRoot: '/collection'
 
   defaults:
     title: null
@@ -8,4 +9,4 @@ class HaberdashFox.Models.Collection extends Backbone.Model
 
 class HaberdashFox.Collections.CollectionsCollection extends Backbone.Collection
   model: HaberdashFox.Models.Collection
-  url: '/collections'
+  url: '/collection'

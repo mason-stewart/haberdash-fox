@@ -13,6 +13,7 @@ namespace :db do
       else
         puts "#{item.etsy_id} is still an active Listing. Keeping it!"
       end
+      sleep 1
     end
 
     # Use this for hosing the Etsy API if you need to find out

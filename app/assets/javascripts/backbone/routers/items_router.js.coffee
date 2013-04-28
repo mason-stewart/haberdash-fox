@@ -1,10 +1,8 @@
 class HaberdashFox.Routers.ItemsRouter extends Backbone.Router
   initialize: (options) ->
     @items = new HaberdashFox.Collections.ItemsCollection()
-    @items.reset options.items
 
     @collections = new HaberdashFox.Collections.CollectionsCollection()
-    @collections.reset options.collections
 
     @bind 'all', @_trackPageview
 
@@ -21,24 +19,35 @@ class HaberdashFox.Routers.ItemsRouter extends Backbone.Router
     "collection/:slug"    : "collection"
 
   index: ->
-    collection = @collections.first()
-
-    @view = new HaberdashFox.Views.Collections.ShowView(model: collection)
-    $("#js-content").html(@view.render().el)
-    window.scrollTo(0,0)
+    @collection(HaberdashFox.FeaturedCollectionSlug)
 
   item: (slug) ->
-    item = @items.get(slug)
+    if item = @items.get(slug)
+      @renderItem(item)
+    else
+      item = new HaberdashFox.Models.Item slug: slug
+      item.fetch
+        success: (model, response, options) =>
+          @items.add(model)
+          @renderItem(model)
 
+  renderItem: (item) ->
     @view = new HaberdashFox.Views.Items.ShowView(model: item)
     $("#js-content").html(@view.render().el)
     window.scrollTo(0,0)
     @initSlider()
 
-
   collection: (slug) ->
-    collection = @collections.get(slug)
+    if collection = @collections.get(slug)
+      @renderCollection(collection)
+    else
+      collection = new HaberdashFox.Models.Collection slug: slug
+      collection.fetch
+        success: (model, response, options) =>
+          @collections.add(model)
+          @renderCollection(model)
 
+  renderCollection: (collection) ->
     @view = new HaberdashFox.Views.Collections.ShowView(model: collection)
     $("#js-content").html(@view.render().el)
     window.scrollTo(0,0)

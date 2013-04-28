@@ -13,6 +13,12 @@ class HaberdashFox.Routers.ItemsRouter extends Backbone.Router
         evt.preventDefault()
         window.router.navigate href, true
 
+
+    HaberdashFox.CachedImages = []
+    throttledScroll = _.throttle(loadVisibleImages, 500)
+    $(window).on 'scroll', throttledScroll
+    $ -> loadVisibleImages()
+
   routes:
     ""                    : "index"
     "items/:slug"         : "item"
@@ -35,6 +41,7 @@ class HaberdashFox.Routers.ItemsRouter extends Backbone.Router
     @view = new HaberdashFox.Views.Items.ShowView(model: item)
     $("#js-content").html(@view.render().el)
     window.scrollTo(0,0)
+    loadVisibleImages()
     @initSlider()
 
   collection: (slug) ->
@@ -51,6 +58,7 @@ class HaberdashFox.Routers.ItemsRouter extends Backbone.Router
     @view = new HaberdashFox.Views.Collections.ShowView(model: collection)
     $("#js-content").html(@view.render().el)
     window.scrollTo(0,0)
+    loadVisibleImages()
 
   _trackPageview: ->
     url = Backbone.history.getFragment()
@@ -92,3 +100,24 @@ class HaberdashFox.Routers.ItemsRouter extends Backbone.Router
   slideChange: (args) ->
     $(".slide-selectors .item").removeClass "selected"
     $(".slide-selectors .item:eq(" + (args.currentSlideNumber - 1) + ")").addClass "selected"
+
+loadVisibleImages = ->
+  $(".item").each ->
+    unless $(@).attr('style')
+      if inView($(this), 300)
+        $(@).parent().addClass('loading')
+        if HaberdashFox.CachedImages[$(@).attr('data-src')]
+          $(@).attr('style', "background-image: url(#{$(@).attr('data-src')});" )
+        else
+          $('<img/>').attr('src', $(@).attr("data-src")).load =>
+            $(@).attr('style', "background-image: url(#{$(@).attr('data-src')});" )
+            HaberdashFox.CachedImages.push $(@).attr('data-src')
+
+inView = (elem, nearThreshold) ->
+  viewportHeight = $(window).height()
+  scrollTop = ((if document.documentElement.scrollTop then document.documentElement.scrollTop else document.body.scrollTop))
+  elemTop = elem.offset().top
+  elemHeight = elem.height()
+  nearThreshold = nearThreshold or 0
+  return true  if (scrollTop + viewportHeight + nearThreshold) > (elemTop + elemHeight)
+  false

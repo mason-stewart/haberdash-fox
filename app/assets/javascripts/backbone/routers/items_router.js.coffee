@@ -13,12 +13,16 @@ class HaberdashFox.Routers.ItemsRouter extends Backbone.Router
         evt.preventDefault()
         window.router.navigate href, true
 
-
+    # An array for caching images pre-loaded via $.load()
+    # See the loadVisibleImages function below.
     HaberdashFox.CachedImages = []
 
+    # Throttle the loadVisibleImage call that's bound
+    # to the window's scroll event
     throttledScroll = _.throttle((-> loadVisibleImages('.slide, .item')), 500)
     $(window).on 'scroll', throttledScroll
 
+    # Easier just to call this on both
     $ -> loadVisibleImages('.slide, .item')
 
   routes:
@@ -27,6 +31,12 @@ class HaberdashFox.Routers.ItemsRouter extends Backbone.Router
     "collection/:slug"    : "collection"
 
   index: ->
+    # Pass the featured collection slug into the collection method
+    # below, via the HaberdashFox.FeaturedCollectionSlug,
+    # which is set by Rails in appliation.html.slim.
+    #
+    # This is done because the featured collection slug
+    # changes from week to week.
     @collection(HaberdashFox.FeaturedCollectionSlug)
 
   item: (slug) ->
@@ -38,6 +48,8 @@ class HaberdashFox.Routers.ItemsRouter extends Backbone.Router
       item = new HaberdashFox.Models.Item slug: slug
       item.fetch
         success: (model, response, options) =>
+          # Add it to the items collection (for fast lookup
+          # next time) and render it
           @items.add(model)
           @renderItem(model)
 
@@ -45,9 +57,10 @@ class HaberdashFox.Routers.ItemsRouter extends Backbone.Router
     @view = new HaberdashFox.Views.Items.ShowView(model: item)
     $("#js-content").html(@view.render().el)
     window.scrollTo(0,0)
-    # lazy load all slides to load
-    loadVisibleImages()
-    @initSlider('.slide')
+    # lazy load all slides when the slider is fully loaded
+    # loadVisibleImages('.slide') is passed into the iOS constructor
+    # in the initSlider method
+    @initSlider()
 
   collection: (slug) ->
     # If we already have it in the collection, just render it
@@ -58,6 +71,8 @@ class HaberdashFox.Routers.ItemsRouter extends Backbone.Router
       collection = new HaberdashFox.Models.Collection slug: slug
       collection.fetch
         success: (model, response, options) =>
+          # Add it to the collections collection (for fast lookup
+          # next time) and render it
           @collections.add(model)
           @renderCollection(model)
 
@@ -72,7 +87,7 @@ class HaberdashFox.Routers.ItemsRouter extends Backbone.Router
     url = Backbone.history.getFragment()
     _gaq.push(['_trackPageview', "/#{url}"])
 
-
+  # slider for the single item view
   initSlider: ->
     slider = $(".iosSlider")
     slider.iosSlider
@@ -81,6 +96,7 @@ class HaberdashFox.Routers.ItemsRouter extends Backbone.Router
       infiniteSlider: true
       navSlideSelector: ".slide-selectors .item"
       onSlideChange: @slideChange
+      onSliderLoaded: (-> loadVisibleImages('.slide', true))
       autoSlide: false
       scrollbar: true
       scrollbarContainer: ".scrollbar"
@@ -109,8 +125,9 @@ class HaberdashFox.Routers.ItemsRouter extends Backbone.Router
     $(".slide-selectors .item").removeClass "selected"
     $(".slide-selectors .item:eq(" + (args.currentSlideNumber - 1) + ")").addClass "selected"
 
-loadVisibleImages = (selector) ->
-  $(selector).not('loaded').each ->
+# A lazy-loader for images
+loadVisibleImages = (selector, ignoreProximity) ->
+  $(selector).not('loadeded').each ->
 
     # store the element, its data-src, and its current style attribute
     el = $(@)
@@ -118,7 +135,7 @@ loadVisibleImages = (selector) ->
     currentStyle = el.attr('style') || ''
 
     # if it's within 300px above or below the viewport
-    if inView($(this), 300)
+    if ignoreProximity || inView($(this), 500)
 
       # add the loading gif to the parent <a>
       el.parent('a').addClass('loading')
@@ -131,7 +148,7 @@ loadVisibleImages = (selector) ->
         # with $.load() and set the background-image on the el in
         # the $.load() callback
         $('<img/>').attr('src', imageUrl).load =>
-          el.addClass('loaded').attr('style', "background-image: url(#{imageUrl}); " + currentStyle )
+          el.addClass('loadeded').attr('style', "background-image: url(#{imageUrl}); " + currentStyle )
 
           # add this url to this array to prevent calling $.load()
           # again for the same image.

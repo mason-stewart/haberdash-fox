@@ -4,8 +4,7 @@ class ItemsController < ApplicationController
   cache_sweeper :item_sweeper
 
   def nav_setup
-    @collections = Collection.includes(:items => :photos).all
-    @items = Item.includes(:collections).includes(:photos).all
+    @collections = Collection.all
   end
 
   # GET /items/:slug
@@ -16,6 +15,9 @@ class ItemsController < ApplicationController
       "<a href='#{url}'>#{url}</a>"
     end
 
-    render :show
+    respond_to do |format|
+      format.html
+      format.json { render(file: 'json/item', object: @item, formats: :json) }
+    end
   end
 end

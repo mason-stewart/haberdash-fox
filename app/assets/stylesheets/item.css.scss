@@ -18,6 +18,7 @@ $slate_color: #323236;
 
   a {
     display: inline-block;
+
     &.loading {
       background: image_url('loader.gif') no-repeat center center;
       background-size: 24px 24px;
@@ -428,11 +429,13 @@ h1, h2{
     display: none;
     }
   .item-grid {
+
     .item {
       width: 300px;
       height: 300px;
       display: inline-block;
       margin: 10px;
+
       .info {
         background: rgba(197, 157, 94, 0.85);
         height: 280px;
@@ -490,6 +493,7 @@ h1, h2{
   .item-grid {
     @include clearfix;
     padding: 7px 20px;
+
     .item {
       width: 320px;
       height: 320px;
@@ -538,6 +542,11 @@ h1, h2{
 
     .item-grid {
       padding: 0;
+
+      a.loading {
+        background: none;
+      }
+
       .item {
         width: 320px;
         height: 320px;
@@ -788,6 +797,11 @@ h1, h2{
 
   .item-grid {
     padding: 0;
+
+    a.loading {
+      background: none;
+    }
+
     .item {
       display: inline-block;
       width: 290px;

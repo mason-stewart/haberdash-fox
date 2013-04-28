@@ -19,11 +19,7 @@ class HaberdashFox.Routers.ItemsRouter extends Backbone.Router
     "collection/:slug"    : "collection"
 
   index: ->
-    collection = @collections.first()
-
-    @view = new HaberdashFox.Views.Collections.ShowView(model: collection)
-    $("#js-content").html(@view.render().el)
-    window.scrollTo(0,0)
+    @collection(HaberdashFox.FeaturedCollectionSlug)
 
   item: (slug) ->
     if item = @items.get(slug)

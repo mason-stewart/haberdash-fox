@@ -68,7 +68,7 @@ html
 
     javascript:
       $(function() {
-        // Blog is the app name
+        HaberdashFox.FeaturedCollectionSlug = "#{@collections[0].slug}"
         window.router = new HaberdashFox.Routers.ItemsRouter();
         Backbone.history.start({pushState: true, silent: true});
       });

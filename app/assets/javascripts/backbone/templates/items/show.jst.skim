@@ -11,7 +11,7 @@ h2.title = @safe @title
     .slider
       - i = 0
       - while i < @photos.length
-        div class='slide' style="background-image: url(#{@photos[i].url})"
+        div class='slide' data-src="#{@photos[i].url}"
         - i++
 
   .slide-selectors

@@ -1,4 +1,4 @@
-collection @items
+object @item
 node(:title) {
   |item| simple_format item.title
 }

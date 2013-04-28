@@ -1,6 +1,7 @@
 class HaberdashFox.Models.Item extends Backbone.Model
   paramRoot: 'item'
   idAttribute: 'slug'
+  urlRoot: "/items"
 
   defaults:
     title: null

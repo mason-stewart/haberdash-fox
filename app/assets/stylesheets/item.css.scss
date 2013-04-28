@@ -229,6 +229,7 @@ h1, h2{
   overflow: hidden;
   width: 100%;
   height: 500px;
+  background: image_url('loader.gif') no-repeat center center;
 
   .slider {
     // required
@@ -242,6 +243,8 @@ h1, h2{
       height: 500px;
       background-position: center center;
       background-size: cover;
+      background-image: image_url('1x1px.png');
+      @include transition(background-image 0.4s ease);
     }
   }
 }

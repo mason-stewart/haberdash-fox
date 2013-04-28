@@ -20,6 +20,7 @@ $slate_color: #323236;
     display: inline-block;
     &.loading {
       background: image_url('loader.gif') no-repeat center center;
+      background-size: 24px 24px;
     }
   }
 
@@ -230,6 +231,7 @@ h1, h2{
   width: 100%;
   height: 500px;
   background: image_url('loader.gif') no-repeat center center;
+  background-size: 24px 24px;
 
   .slider {
     // required

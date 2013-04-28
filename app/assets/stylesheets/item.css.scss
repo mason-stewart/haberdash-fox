@@ -16,6 +16,13 @@ $slate_color: #323236;
   // padding: 5%;
   text-align: center;
 
+  a {
+    display: inline-block;
+    &.loading {
+      background: image_url('loader.gif') no-repeat center center;
+    }
+  }
+
   .item {
     display: inline-block;
     width: 320px;
@@ -25,6 +32,9 @@ $slate_color: #323236;
     vertical-align: top;
     // float: left;
     margin: 15px;
+    background-image: image_url('1x1px.png');
+    @include transition(background-image 0.4s ease);
+
     &:hover {
       .info {
         @include opacity(1);

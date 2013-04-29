@@ -1,6 +1,6 @@
 class CollectionController < ApplicationController
   before_filter :nav_setup
-  caches_action :nav_setup, :index, :show
+  caches_action :nav_setup, :index
   cache_sweeper :item_sweeper
 
   def nav_setup

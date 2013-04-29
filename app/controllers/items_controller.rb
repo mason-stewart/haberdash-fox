@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_filter :nav_setup
-  caches_action :nav_setup, :show
+  caches_action :nav_setup
   cache_sweeper :item_sweeper
 
   def nav_setup

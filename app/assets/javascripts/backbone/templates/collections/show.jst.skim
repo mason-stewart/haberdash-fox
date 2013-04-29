@@ -7,7 +7,7 @@ h1
   - i = 0
   - while i < @items.length
     a href="/items/#{@items[i].slug}"
-      .item style="background-image: url(#{@items[i].photo});"
+      .item data-src="#{@items[i].photo}"
         .info
           .name 
             p = @safe @items[i].title

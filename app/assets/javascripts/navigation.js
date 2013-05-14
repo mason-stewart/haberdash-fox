@@ -12,6 +12,7 @@
         }), index * 50);
       });
     });
+
     $('td a').click(function() {
       return $('.navigation td').each(function(index) {
         var _this = this;
@@ -20,6 +21,7 @@
         }), index * 50);
       });
     });
+    
     $window = $(window);
     colorChange = $('.color-change');
     sections = $('.layout-full').get().reverse();

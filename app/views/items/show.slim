@@ -10,7 +10,7 @@ h2.title = simple_format @item.title
   .iosSlider
     .slider
       - @item.photos.where(:visible => true).each do |photo|
-        div class='slide' style="background-image: url(#{photo.attrs['url_fullxfull']})"
+        div class='slide' data-src="#{photo.attrs['url_fullxfull']}"
 
   .slide-selectors
     - @item.photos.where(:visible => true).each_with_index do |photo, index|

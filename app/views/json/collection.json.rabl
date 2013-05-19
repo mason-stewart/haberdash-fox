@@ -1,4 +1,4 @@
-collection @collections
+object @collection
 attributes :title, :slug
 child(:items) {
   attributes :title, :slug, :price

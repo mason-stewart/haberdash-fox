@@ -711,7 +711,7 @@ h1, h2{
       display: block;
       width: 100%;
       position: relative;
-      z-index: 500;
+      z-index: 100;
     }
 
     h3 {
@@ -906,7 +906,7 @@ h1, h2{
     position: fixed;
     top: 28px;
     right: 0;
-    z-index: 2;
+    z-index: 1000;
   }
 
   .logotype {
@@ -967,7 +967,7 @@ h1, h2{
     display: block;
     width: 100%;
     position: relative;
-    z-index: 500;
+    z-index: 100;
   }
 
   .footer {

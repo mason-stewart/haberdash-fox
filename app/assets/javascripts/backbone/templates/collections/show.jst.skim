@@ -1,5 +1,5 @@
 - if window.location.pathname == '/'
-  img src='/assets/black.png' class="slogan" href="http://www.youtube.com/watch?v=wx6fwfBKCIQ" target="_blank"
+  img src='/assets/black.png' class="slogan"
 
 h1 
   = @title

@@ -49,7 +49,7 @@ html
       .content#js-content
         - if current_page?(:controller => 'collection', :action => 'index')
 
-          = link_to(image_tag('black.png', :class=>"slogan", :href="http://www.youtube.com/watch?v=wx6fwfBKCIQ"), '/')
+          = link_to(image_tag('black.png', :class=>"slogan",), '/')
 
         = yield
 

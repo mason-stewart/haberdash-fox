@@ -1,5 +1,5 @@
 - if window.location.pathname == '/'
-  img src='/assets/fathersday.jpg' class="slogan"
+  img src='/assets/awesome.png' class="slogan"
 
 h1 
   = @title

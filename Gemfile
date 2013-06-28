@@ -24,7 +24,7 @@ gem "skim"
 gem "temple", "0.4.0"
 gem 'rabl'
 gem 'oj'
-gem 'newrelic_rpm'
+# gem 'newrelic_rpm'
 
 group :assets do
   gem "coffee-rails", "~> 3.2.1"

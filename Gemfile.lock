@@ -149,7 +149,6 @@ GEM
     method_source (0.8.1)
     mime-types (1.21)
     multi_json (1.6.0)
-    newrelic_rpm (3.5.6.46)
     nokogiri (1.5.5)
     oauth (0.4.7)
     oj (2.0.2)
@@ -287,7 +286,6 @@ DEPENDENCIES
   hpricot (>= 0.8.6)
   jquery-rails
   meta_search (>= 1.1.0.pre)
-  newrelic_rpm
   oj
   pg (>= 0.14.1)
   quiet_assets (>= 1.0.1)

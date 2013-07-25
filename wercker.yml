@@ -3,7 +3,7 @@ build:
     # The steps that will be executed on build
     steps:
         # A step that executes `bundle install` command
-        - bundle-install
+        step: wercker/bundle-install@0.9.1
         # A step that prepares the database.yml with settings from the database you defined in services
         #- rails-database-yml
         # A custom script step, name value is used in the UI
@@ -15,6 +15,6 @@ build:
                 echo "from location $(which ruby)"
                 echo -p "gem list: $(gem list)"
         # Add more steps here:
-        # - script:
-        #        name: rspec
-        #        code: bundle exec rspec
+        - script:
+                name: rspec
+                code: bundle exec rspec

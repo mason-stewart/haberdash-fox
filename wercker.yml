@@ -1,4 +1,6 @@
 box: wercker/ruby
+services:
+    - wercker/postgresql
 build:
     # The steps that will be executed on build
     steps:

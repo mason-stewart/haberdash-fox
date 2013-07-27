@@ -3,6 +3,7 @@ ActiveAdmin.register Collection do
 
   index do
     column :title
+    column :etsy_shop_name
     default_actions
   end
 
@@ -20,6 +21,7 @@ ActiveAdmin.register Collection do
     f.inputs "Collection Details" do
       f.input :title
       f.input :slug
+      f.input :etsy_shop_name
       f.input :active
     end
     f.buttons

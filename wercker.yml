@@ -1,11 +1,12 @@
 box: wercker/ruby
 services:
-    - wercker/postgresql
+  - wercker/postgresql
+
 build:
     # The steps that will be executed on build
     steps:
         # A step that executes `bundle install` command
-        - wercker/bundle-install@0.9.1
+        - bundle-install
         # A step that prepares the database.yml with settings from the database you defined in services
         - rails-database-yml
         # A custom script step, name value is used in the UI
@@ -18,5 +19,5 @@ build:
                 echo -p "gem list: $(gem list)"
         # Add more steps here:
         - script:
-                name: rspec
-                code: bundle exec rspec
+               name: rspec
+               code: bundle exec rspec --color --format nested

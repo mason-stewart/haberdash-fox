@@ -4,8 +4,11 @@ class Collection < ActiveRecord::Base
 
   def fetch_shop_meta_from_etsy
     unless self.etsy_shop_name.nil?
-      @query = Etsy::Shop.find(self.etsy_shop_name)
+      @query = Etsy::Shop.find(self.etsy_shop_name, {:includes => ['About']})
       self.etsy_shop_meta = @query.result
+
+      @query = Etsy::User.find(self.etsy_shop_meta['login_name'], {:includes => 'Profile'})
+      self.etsy_shop_meta['User'] = @query.result
     end
   end
 

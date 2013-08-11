@@ -25,9 +25,8 @@ class Collection < ActiveRecord::Base
         new_item.url = item.url
         new_item.etsy_id = item.id
         new_item.slug = item.title.gsub(/[^0-9a-z ]/i, '').gsub(/ /,'-').downcase
-        if new_item.save
-          self.items << new_item
-        end
+        new_item.collections << self
+        new_item.save
       end
     end
   end

@@ -9,6 +9,9 @@ class Collection < ActiveRecord::Base
 
       @query = Etsy::User.find(self.etsy_shop_meta['login_name'], {:includes => 'Profile'})
       self.etsy_shop_meta['User'] = @query.result
+
+      self.etsy_shop_meta['title'].gsub! /&#39;/, "'"
+      self.etsy_shop_meta['User']['Profile']['bio'].gsub! /&#39;/, "'"
     end
   end
 

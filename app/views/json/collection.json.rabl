@@ -1,5 +1,5 @@
 object @collection
-attributes :title, :slug
+attributes :title, :slug, :etsy_shop_meta
 child(:items) {
   attributes :title, :slug, :price
   node (:photo) do

@@ -4,8 +4,8 @@ class Collection < ActiveRecord::Base
 
   def fetch_shop_meta_from_etsy
     unless self.etsy_shop_name.nil?
-      @shop = Etsy::Shop.find(self.etsy_shop_name)
-      self.etsy_shop_meta = @shop
+      @query = Etsy::Shop.find(self.etsy_shop_name)
+      self.etsy_shop_meta = @query.result
     end
   end
 
@@ -22,8 +22,9 @@ class Collection < ActiveRecord::Base
         new_item.url = item.url
         new_item.etsy_id = item.id
         new_item.slug = item.title.gsub(/[^0-9a-z ]/i, '').gsub(/ /,'-').downcase
-        new_item.save!
-        self.items << new_item
+        if new_item.save
+          self.items << new_item
+        end
       end
     end
   end

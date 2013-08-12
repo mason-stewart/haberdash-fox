@@ -1,7 +1,7 @@
 h2.title = simple_format @item.title
-- if @collection.etsy_shop_meta
-  - if @collection.etsy_shop_meta['title']
-  | from #{@collection.etsy_shop_meta['title']}
+- if @item.collections[0].etsy_shop_meta
+  - if @item.collections[0].etsy_shop_meta['title']
+    | from #{@item.collections[0].etsy_shop_meta['title']}
 
 .meta
   .price $#{@item.price}

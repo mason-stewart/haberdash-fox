@@ -1,0 +1,29 @@
+object @item do
+  attribute :title do
+    @title
+  end
+
+  attribute :description do
+    @description
+  end
+
+  attributes :price, :slug, :url
+
+  collection :collections => @item.collections do 
+    attributes :title, :slug, :etsy_shop_meta
+  end
+
+  collection :photos => @item.photos do |photo|
+    attribute :url do |photo|
+      photo.attrs['url_fullxfull']
+    end
+  end
+
+  if @item.collections[0]['etsy_shop_meta']
+    object :etsy_shop_meta => @item.collections[0]['etsy_shop_meta'] do |meta|
+      attribute :title do
+        meta['title']
+      end
+    end
+  end
+end

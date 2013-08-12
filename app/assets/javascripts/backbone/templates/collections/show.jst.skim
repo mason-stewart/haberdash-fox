@@ -3,6 +3,19 @@
 
 h1 
   = @title
+- if @etsy_shop_meta?.User?.Profile?.first_name?
+  h2 by #{@etsy_shop_meta.User.Profile.first_name} #{@etsy_shop_meta.User.Profile.last_name}
+
+- if @etsy_shop_meta?.User?.Profile?.bio?
+  h3 Seller bio:
+  p = _.unescape @etsy_shop_meta.User.Profile.bio
+
+- if @etsy_shop_meta?.image_url_760x100?
+  img src="#{@etsy_shop_meta.image_url_760x100}"
+
+- if @etsy_shop_meta?.User?.Profile?.image_url_75x75?
+  img src="#{@etsy_shop_meta.User.Profile.image_url_75x75}"
+
 .item-grid
   - i = 0
   - while i < @items.length

@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  include ActionView::Helpers::TextHelper
+
   before_filter :nav_setup
   caches_action :nav_setup
   cache_sweeper :item_sweeper
@@ -14,6 +16,9 @@ class ItemsController < ApplicationController
     @description = @item.description.gsub( %r{http://[^\s<]+} ) do |url|
       "<a href='#{url}'>#{url}</a>"
     end
+
+    @title = simple_format @item.title
+    @description = simple_format @description
 
     respond_to do |format|
       format.html

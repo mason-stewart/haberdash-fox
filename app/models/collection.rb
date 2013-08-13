@@ -3,7 +3,7 @@ class Collection < ActiveRecord::Base
   after_create :fetch_shop_items_from_etsy
 
   def fetch_shop_meta_from_etsy
-    unless self.etsy_shop_name.nil?
+    unless self.etsy_shop_name.empty?
       @query = Etsy::Shop.find(self.etsy_shop_name, {:includes => ['About']})
       self.etsy_shop_meta = @query.result
 
@@ -16,7 +16,7 @@ class Collection < ActiveRecord::Base
   end
 
   def fetch_shop_items_from_etsy
-    unless self.etsy_shop_name.nil?
+    unless self.etsy_shop_name.empty?
       @shop_items = Etsy::Listing.find_all_by_shop_id(self.etsy_shop_name, {
         :limit => 250
       })

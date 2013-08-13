@@ -19,8 +19,17 @@ class CollectionController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.json { render(file: 'json/collection', object: @collection, formats: :json) }
+      format.json { render(file: 'json/collection') }
+    end
+  end
 
+  # GET /shops
+  def shops
+    @shops = Collection.includes(:items).where("etsy_shop_meta IS NOT NULL")
+
+    respond_to do |format|
+      format.html
+      format.json { render(file: 'json/shops') }
     end
   end
 end

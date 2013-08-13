@@ -9,17 +9,6 @@ h1 = @collection.title
   - if @collection.etsy_shop_meta['User']['Profile']['first_name']
     h4 by #{@collection.etsy_shop_meta['User']['Profile']['first_name']} #{@collection.etsy_shop_meta['User']['Profile']['last_name']}
 
-
-
-    / - if @collection.etsy_shop_meta['User']['Profile']['bio']
-    /   h3 Seller bio:
-    /   p = @collection.etsy_shop_meta['User']['Profile']['bio'].html_safe
-
-    / - if @collection.etsy_shop_meta['image_url_760x100']
-    /   img src="#{@collection.etsy_shop_meta['image_url_760x100']}"
-
-
-
 .item-grid
   - @collection.items.each do |item|
     a href="/items/#{item.slug}"

@@ -1,0 +1,8 @@
+collection @shops do |shop|
+  attributes :title, :slug
+
+  attribute :photo do
+    shop.items[0].photos[0]['attrs']['url_570xN']
+  end
+
+end

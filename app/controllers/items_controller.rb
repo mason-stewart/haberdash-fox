@@ -6,7 +6,7 @@ class ItemsController < ApplicationController
   cache_sweeper :item_sweeper
 
   def nav_setup
-    @collections = Collection.all
+    @collections = Collection.where("etsy_shop_meta IS NULL")
   end
 
   # GET /items/:slug

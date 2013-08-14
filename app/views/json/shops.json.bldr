@@ -1,4 +1,4 @@
-collection @shops do |shop|
+collection :shops => @shops do |shop|
   attributes :title, :slug
 
   attribute :photo do

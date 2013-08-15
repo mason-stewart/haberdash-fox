@@ -11,6 +11,7 @@ class Shop < Collection
   after_create :fetch_shop_items_from_etsy
 
   attr_accessible :etsy_shop_name, :etsy_shop_meta
+  serialize :etsy_shop_meta, JSON
 
   def fetch_shop_meta_from_etsy
     unless self.etsy_shop_name.empty?

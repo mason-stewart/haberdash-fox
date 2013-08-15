@@ -33,4 +33,10 @@ class CollectionController < ApplicationController
       format.json { render(file: 'json/shops') }
     end
   end
+
+  # GET /shops
+  def shops
+    @shops = Collection.includes(:items).where("etsy_shop_meta IS NOT NULL")
+    render(file: 'json/shops')
+  end
 end

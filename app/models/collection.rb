@@ -1,6 +1,27 @@
 class Collection < ActiveRecord::Base
+  attr_accessible :active, :title, :slug
+
+  has_and_belongs_to_many :items
+
+  validates :slug, :title, :presence => true
+  validates :slug, :uniqueness => {:case_sensitive => false}
+
+end
+
+class Shop < Collection
+  before_destroy {
+    self.items.each do |item|
+      item.destroy
+    end
+
+    self.items.delete_all 
+    p self.items
+  }
   before_create :fetch_shop_meta_from_etsy
   after_create :fetch_shop_items_from_etsy
+
+  serialize :etsy_shop_meta, JSON
+  attr_accessible :etsy_shop_name, :etsy_shop_meta
 
   def fetch_shop_meta_from_etsy
     unless self.etsy_shop_name.empty?
@@ -27,19 +48,11 @@ class Collection < ActiveRecord::Base
         new_item.price = item.price
         new_item.url = item.url
         new_item.etsy_id = item.id
-        new_item.slug = item.title.gsub(/[^0-9a-z ]/i, '').gsub(/ /,'-').downcase
+        new_item.slug = item.title.gsub(/[
+          ^0-9a-z ]/i, '').gsub(/ /,'-').downcase
         new_item.collections << self
         new_item.save
       end
     end
   end
-
-  attr_accessible :active, :title, :slug, :etsy_shop_name, :etsy_shop_meta
-
-  has_and_belongs_to_many :items
-
-  validates :slug, :title, :presence => true
-  validates :slug, :uniqueness => {:case_sensitive => false}
-
-  serialize :etsy_shop_meta, JSON
 end

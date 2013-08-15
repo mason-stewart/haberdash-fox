@@ -4,13 +4,13 @@ ul.nav-list
   li
     a href="/" class="ss-icon"  Home
 
+  li
+    a href="/shops" Shops
+
   - @collections.each_with_index do |collection, index|
     - unless index == 0
       li
         = link_to collection.title, '/collection/'+collection.slug
-
-  li
-    a href="/shops" Shops
 
   ul.submenu 
     li

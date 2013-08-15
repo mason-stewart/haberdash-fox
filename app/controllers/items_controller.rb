@@ -1,10 +1,12 @@
 class ItemsController < ApplicationController
+  include ActionView::Helpers::TextHelper
+
   before_filter :nav_setup
   caches_action :nav_setup
   cache_sweeper :item_sweeper
 
   def nav_setup
-    @collections = Collection.all
+    @collections = Collection.where("etsy_shop_meta IS NULL")
   end
 
   # GET /items/:slug
@@ -14,6 +16,9 @@ class ItemsController < ApplicationController
     @description = @item.description.gsub( %r{http://[^\s<]+} ) do |url|
       "<a href='#{url}'>#{url}</a>"
     end
+
+    @title = simple_format @item.title
+    @description = simple_format @description
 
     respond_to do |format|
       format.html

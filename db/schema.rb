@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130411191328) do
+ActiveRecord::Schema.define(:version => 20130814213424) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -49,10 +49,13 @@ ActiveRecord::Schema.define(:version => 20130411191328) do
   create_table "collections", :force => true do |t|
     t.string   "title"
     t.boolean  "active"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
     t.string   "slug"
     t.integer  "position"
+    t.string   "etsy_shop_name"
+    t.text     "etsy_shop_meta"
+    t.string   "type"
   end
 
   create_table "collections_items", :id => false, :force => true do |t|

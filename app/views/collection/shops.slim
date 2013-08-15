@@ -1,0 +1,8 @@
+h1 Shops
+
+.item-grid
+  - @shops.each do |shop|
+    a href="/collection/#{shop.slug}"
+      .item data-src="#{shop.items[0].photos.where(:visible => true).first.attrs['url_570xN']}"
+        .info
+          .name = simple_format shop.title

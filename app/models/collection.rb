@@ -5,4 +5,5 @@ class Collection < ActiveRecord::Base
 
   validates :slug, :title, :presence => true
   validates :slug, :uniqueness => {:case_sensitive => false}
+
 end

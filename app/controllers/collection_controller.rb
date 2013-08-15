@@ -4,14 +4,14 @@ class CollectionController < ApplicationController
   cache_sweeper :item_sweeper
 
   def nav_setup
-    @collections = Collection.all
+    @collections = Collection.where("etsy_shop_meta IS NULL")
   end
 
   # GET /
-  def index
-    @collection = Collection.includes(:items).first
-    render :show
-  end
+  # def index
+  #   @collection = Collection.includes(:items).first
+  #   render :show
+  # end
 
   # GET /collection/:slug
   def show
@@ -19,8 +19,24 @@ class CollectionController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.json { render(file: 'json/collection', object: @collection, formats: :json) }
-
+      format.json { render(file: 'json/collection') }
     end
+  end
+
+  # GET /shops
+  # def shops
+  def index # TEMPORARY
+    @shops = Collection.includes(:items).where("etsy_shop_meta IS NOT NULL")
+
+    respond_to do |format|
+      format.html { render :shops }
+      format.json { render(file: 'json/shops') }
+    end
+  end
+
+  # GET /shops
+  def shops
+    @shops = Collection.includes(:items).where("etsy_shop_meta IS NOT NULL")
+    render(file: 'json/shops')
   end
 end

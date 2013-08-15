@@ -1,4 +1,11 @@
 h2.title = simple_format @item.title
+.back.top
+  - if @item.collections[0].etsy_shop_meta
+    - if @item.collections[0].etsy_shop_meta['title']
+      | from 
+      a href="/collection/#{@item.collections[0].slug}"
+        | #{@item.collections[0]['title']}
+
 .meta
   .price $#{@item.price}
   a href="#{@item.url}" class="purchase" target="_blank" data-bypass="" Purchase on Etsy

@@ -87,6 +87,10 @@ $slate_color: #323236;
   padding: 21px 0px 4px 0;
   // width: 62px;
 
+  &.top {
+    margin: -26px 0 22px 0;
+  }
+
   a {
     color: #b05e27;
   }
@@ -132,6 +136,14 @@ $slate_color: #323236;
   -webkit-hyphens: auto;
      -moz-hyphens: auto;
           hyphens: auto;
+}
+
+.profile-img {
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  margin-bottom: -25px;
+  margin-top: 7px;
 }
 
 .subpage {
@@ -633,7 +645,7 @@ h1, h2{
     }
 
     .back.top {
-      display: none;
+      // display: none;
     }
 
     .sidebar {
@@ -662,6 +674,15 @@ h1, h2{
       margin-top: 6%;
       margin-bottom: 8px;
     }
+
+    h4 {
+      margin-top: -10px;
+    }
+
+    .profile-img {
+      margin-top: 10%;
+    }
+
     .top-bar {
       height: 28px;
       width: 100%;
@@ -883,7 +904,7 @@ h1, h2{
   }
 
   .back.top {
-    display: none;
+    // display: none;
   }
 
 
@@ -943,6 +964,15 @@ h1, h2{
   h3 {
     margin-top: 0;
     font-size: 18px;
+  }
+  h4 {
+    margin-top: -10px;
+    font-size: 18px;
+  }
+
+  .profile-img {
+    margin-top: 10%;
+    margin-bottom: -10px;
   }
   .top-bar {
     height: 28px;

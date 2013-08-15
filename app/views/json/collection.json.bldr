@@ -1,0 +1,13 @@
+object @collection do
+  attributes :title, :slug, :etsy_shop_meta
+
+  collection :items => @collection.items do |item|
+  
+    attributes :title, :slug, :price
+
+    attribute :photo do
+      item.photos[0]['attrs']['url_570xN']
+    end
+  
+  end
+end

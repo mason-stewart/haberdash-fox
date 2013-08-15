@@ -26,9 +26,11 @@ class HaberdashFox.Routers.ItemsRouter extends Backbone.Router
     $ -> loadVisibleImages('.slide, .item')
 
   routes:
-    ""                    : "index"
+    # ""                    : "index"
+    ""                    : "shops" # temporary for Shops launch
     "items/:slug"         : "item"
     "collection/:slug"    : "collection"
+    "shops"               : "shops"
 
   index: ->
     # Pass the featured collection slug into the collection method
@@ -79,6 +81,25 @@ class HaberdashFox.Routers.ItemsRouter extends Backbone.Router
   renderCollection: (collection) ->
     @view = new HaberdashFox.Views.Collections.ShowView(model: collection)
     $("#js-content").html(@view.render().el)
+    window.scrollTo(0,0)
+    # lazy load all item images
+    loadVisibleImages('.item')
+
+  shops: ->
+    if @shopsCollection?
+      @renderShops()
+    else
+      @shopsCollection = new HaberdashFox.Models.Collection
+      @shopsCollection.url = '/shops'
+      @shopsCollection.fetch
+        success: (model) => @renderShops()
+
+  renderShops: ->
+    @view = new HaberdashFox.Views.Collections.ShowView
+      model: @shopsCollection
+      template: JST["backbone/templates/collections/shops"]
+    $("#js-content").html(@view.render().el)
+
     window.scrollTo(0,0)
     # lazy load all item images
     loadVisibleImages('.item')

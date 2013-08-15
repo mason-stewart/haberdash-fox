@@ -1,0 +1,14 @@
+- if window.location.pathname == '/'
+  img src='/assets/permanent.jpg' class="slogan"
+
+h1 Shops
+
+.item-grid
+  - i = 0
+  - while i < @shops.length
+    a href="/collection/#{@shops[i].slug}"
+      .item data-src="#{@shops[i].photo}"
+        .info
+          .name 
+            p = @safe @shops[i].title
+    - i++

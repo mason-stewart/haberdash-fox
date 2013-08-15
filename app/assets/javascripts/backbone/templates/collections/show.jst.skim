@@ -1,5 +1,5 @@
 - if window.location.pathname == '/'
-  img src='/assets/randy.jpg' class="slogan"
+  img src='/assets/permanent.jpg' class="slogan"
 
 - if @etsy_shop_meta?.User?.Profile?.image_url_75x75?
   img class="profile-img" src="#{@etsy_shop_meta.User.Profile.image_url_75x75}"

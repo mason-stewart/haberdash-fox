@@ -99,6 +99,9 @@ class HaberdashFox.Routers.ItemsRouter extends Backbone.Router
       template: JST["backbone/templates/collections/shops"]
     $("#js-content").html(@view.render().el)
 
+    window.scrollTo(0,0)
+    # lazy load all item images
+    loadVisibleImages('.item')
 
   _trackPageview: ->
     url = Backbone.history.getFragment()

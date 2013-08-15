@@ -8,10 +8,10 @@ class CollectionController < ApplicationController
   end
 
   # GET /
-  def index
-    @collection = Collection.includes(:items).first
-    render :show
-  end
+  # def index
+  #   @collection = Collection.includes(:items).first
+  #   render :show
+  # end
 
   # GET /collection/:slug
   def show
@@ -24,11 +24,12 @@ class CollectionController < ApplicationController
   end
 
   # GET /shops
-  def shops
+  # def shops
+  def index # TEMPORARY
     @shops = Collection.includes(:items).where("etsy_shop_meta IS NOT NULL")
 
     respond_to do |format|
-      format.html
+      format.html { render :shops }
       format.json { render(file: 'json/shops') }
     end
   end

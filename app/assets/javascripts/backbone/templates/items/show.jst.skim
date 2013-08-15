@@ -4,7 +4,7 @@ h2.title = @safe @title
     - if @etsy_shop_meta['title']
       | from 
       a href="/collection/#{@collections[0].slug}"
-        | #{@etsy_shop_meta['title']}
+        | #{@collections[0].title}
 
 .meta
   .price $#{@price}

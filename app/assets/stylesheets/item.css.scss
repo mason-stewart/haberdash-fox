@@ -362,28 +362,32 @@ h1, h2{
       background: $gold-color;
     }
 
-    &.clothing {
+    &.shops {
       background: lighten( $gold-color, 5% );
     }
 
-    &.accessories {
+    &.clothing {
       background: lighten( $gold-color, 10% );
     }
 
-    &.shoes {
+    &.accessories {
       background: lighten( $gold-color, 15% );
     }
 
-    &.outdoor {
+    &.shoes {
       background: lighten( $gold-color, 20% );
     }
 
-    &.housewares {
+    &.outdoor {
       background: lighten( $gold-color, 25% );
     }
 
-    &.art {
+    &.housewares {
       background: lighten( $gold-color, 30% );
+    }
+
+    &.art {
+      background: lighten( $gold-color, 35% );
     }
 
     a {

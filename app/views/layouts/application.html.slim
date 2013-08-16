@@ -26,9 +26,12 @@ html
     #js-mobile-navigation.mobile-navigation
       table
         tbody
-          / tr
-          /   td class='home'
-          /    a href="/" Home
+          tr
+            td class='home'
+             a href="/" Home
+          tr
+            td class='shops'
+             a href="/shops" Shops
           - @collections.each do |collection|
             tr
               td class="#{collection.slug}"

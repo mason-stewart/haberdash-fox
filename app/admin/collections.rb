@@ -1,11 +1,11 @@
 ActiveAdmin.register Collection do
   config.sort_order = 'position_asc'
 
-  controller do
-    def scoped_collection
-      Collection.where("etsy_shop_meta IS NULL")
-    end
-  end
+  # controller do
+  #   def scoped_collection
+  #     Collection.where("etsy_shop_meta IS NULL")
+  #   end
+  # end
 
   index do
     column :title

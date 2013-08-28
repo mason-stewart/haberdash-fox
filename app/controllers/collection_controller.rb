@@ -37,6 +37,10 @@ class CollectionController < ApplicationController
   # GET /shops
   def shops
     @shops = Collection.where("etsy_shop_meta IS NOT NULL").with_at_least_n_items
-    render(file: 'json/shops')
+    
+    respond_to do |format|
+      format.html { render :shops }
+      format.json { render(file: 'json/shops') }
+    end
   end
 end

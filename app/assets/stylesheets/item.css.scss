@@ -155,6 +155,32 @@ $slate_color: #323236;
   line-height: 22px;
   font-weight: 300;
   padding: 0 6%;
+  h3 {
+    font-size: 16px;
+    font-weight: 500;
+    text-align: left;
+    margin-top: 40px;
+    margin-bottom: 10px;
+  }
+  img {
+    width: 100%;
+    margin-top: 6%;
+  }
+}
+
+.new-divider {
+  border-bottom: 1px solid #ecebe9;
+  text-align: center;
+  padding-bottom: 30px;
+  .purchase {
+    padding: 12px 22px 10px 22px;
+    border-radius: 5px;
+    background: #c59d5e;
+    color: #fff;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+  }
 }
 
 .title {
@@ -317,6 +343,25 @@ h1, h2{
 
 .scrollright {
   left: 620px;
+}
+
+.videoWrapper {
+  position: relative;
+  padding-bottom: 475px; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+.videoWrapper iframe {
+  // position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 800px;
+  max-height: 450px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
 

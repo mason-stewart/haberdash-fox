@@ -7,6 +7,7 @@ HaberdashFox::Application.routes.draw do
 
   get 'about' => 'pages#about'
   get 'contact' => 'pages#contact'
+  get 'walnut-studiolo' => 'pages#walnut-studiolo'
 
   get '/' => 'collection#index'
   get '/collection/:slug' => 'collection#show'

@@ -26,8 +26,7 @@ class HaberdashFox.Routers.ItemsRouter extends Backbone.Router
     $ -> loadVisibleImages('.slide, .item')
 
   routes:
-    # ""                    : "index"
-    ""                    : "shops" # temporary for Shops launch
+    ""                    : "index"
     "items/:slug"         : "item"
     "collection/:slug"    : "collection"
     "shops"               : "shops"

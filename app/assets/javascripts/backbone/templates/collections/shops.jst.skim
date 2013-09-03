@@ -1,5 +1,6 @@
 - if window.location.pathname == '/'
-  img src='/assets/walnut.jpg' class="slogan"
+  a href="/walnut-studiolo" data-bypass=""
+    img src='/assets/walnut.jpg' class="slogan"
 
 h1 Shops
 

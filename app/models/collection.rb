@@ -6,4 +6,6 @@ class Collection < ActiveRecord::Base
   validates :slug, :title, :presence => true
   validates :slug, :uniqueness => {:case_sensitive => false}
 
+
+  scope :with_at_least_n_items, ->(n = 1) { includes(:items).select { |w| w.items.size >= n } }
 end

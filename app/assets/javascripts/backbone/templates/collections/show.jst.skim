@@ -1,14 +1,16 @@
 - if window.location.pathname == '/'
-  img src='/assets/walnut.jpg' class="slogan"
+  a href="/walnut-studiolo" data-bypass=""
+    img src='/assets/walnut.jpg' class="slogan"
 
-- if @etsy_shop_meta?.User?.Profile?.image_url_75x75?
-  img class="profile-img" src="#{@etsy_shop_meta.User.Profile.image_url_75x75}"
+- unless window.location.pathname == '/'
+  - if @etsy_shop_meta?.User?.Profile?.image_url_75x75?
+    img class="profile-img" src="#{@etsy_shop_meta.User.Profile.image_url_75x75}"
 
-h1 
-  = @title
+  h1 
+    = @title
 
-- if @etsy_shop_meta?.User?.Profile?.first_name?
-  h4 by #{@etsy_shop_meta.User.Profile.first_name} #{@etsy_shop_meta.User.Profile.last_name}
+  - if @etsy_shop_meta?.User?.Profile?.first_name?
+    h4 by #{@etsy_shop_meta.User.Profile.first_name} #{@etsy_shop_meta.User.Profile.last_name}
 
 .item-grid
   - i = 0

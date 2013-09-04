@@ -51,8 +51,8 @@ html
 
       .content#js-content
         - if current_page?(:controller => 'collection', :action => 'index')
-
-          = image_tag('walnut.jpg', :class=>"slogan",)
+          a href="/walnut-studiolo" data-bypass=""
+            = image_tag('walnut.jpg', :class=>"slogan",)
 
         = yield
 
@@ -72,7 +72,7 @@ html
 
     javascript:
       $(function() {
-        HaberdashFox.FeaturedCollectionSlug = "#{@collections[0].slug}"
+        HaberdashFox.FeaturedCollectionSlug = "#{@featured_collection.slug}"
         window.router = new HaberdashFox.Routers.ItemsRouter();
         Backbone.history.start({pushState: true, silent: true});
       });

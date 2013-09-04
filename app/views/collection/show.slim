@@ -1,13 +1,13 @@
+- unless current_page?(:controller => 'collection', :action => 'index')
+  - if @collection.etsy_shop_meta && @collection.etsy_shop_meta['User']['Profile']
+    - if @collection.etsy_shop_meta['User']['Profile']['image_url_75x75']
+      img class="profile-img" src="#{@collection.etsy_shop_meta['User']['Profile']['image_url_75x75']}"
 
-- if @collection.etsy_shop_meta && @collection.etsy_shop_meta['User']['Profile']
-  - if @collection.etsy_shop_meta['User']['Profile']['image_url_75x75']
-    img class="profile-img" src="#{@collection.etsy_shop_meta['User']['Profile']['image_url_75x75']}"
+  h1 = @collection.title
 
-h1 = @collection.title
-
-- if @collection.etsy_shop_meta && @collection.etsy_shop_meta['User']['Profile']
-  - if @collection.etsy_shop_meta['User']['Profile']['first_name']
-    h4 by #{@collection.etsy_shop_meta['User']['Profile']['first_name']} #{@collection.etsy_shop_meta['User']['Profile']['last_name']}
+  - if @collection.etsy_shop_meta && @collection.etsy_shop_meta['User']['Profile']
+    - if @collection.etsy_shop_meta['User']['Profile']['first_name']
+      h4 by #{@collection.etsy_shop_meta['User']['Profile']['first_name']} #{@collection.etsy_shop_meta['User']['Profile']['last_name']}
 
 .item-grid
   - @collection.items.each do |item|

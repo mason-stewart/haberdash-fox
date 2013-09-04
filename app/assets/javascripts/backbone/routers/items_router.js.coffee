@@ -26,8 +26,7 @@ class HaberdashFox.Routers.ItemsRouter extends Backbone.Router
     $ -> loadVisibleImages('.slide, .item')
 
   routes:
-    # ""                    : "index"
-    ""                    : "shops" # temporary for Shops launch
+    ""                    : "index"
     "items/:slug"         : "item"
     "collection/:slug"    : "collection"
     "shops"               : "shops"
@@ -35,7 +34,7 @@ class HaberdashFox.Routers.ItemsRouter extends Backbone.Router
   index: ->
     # Pass the featured collection slug into the collection method
     # below, via the HaberdashFox.FeaturedCollectionSlug,
-    # which is set by Rails in appliation.html.slim.
+    # which is set by Rails in application.html.slim.
     #
     # This is done because the featured collection slug
     # changes from week to week.

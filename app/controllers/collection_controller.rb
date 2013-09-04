@@ -4,12 +4,12 @@ class CollectionController < ApplicationController
   cache_sweeper :item_sweeper
 
   def nav_setup
-    @collections = Collection.where("etsy_shop_meta IS NULL")
+    @collections = Collection.order(:position).where("etsy_shop_meta IS NULL")
   end
 
   # GET /
   def index
-    @collection = Collection.with_at_least_n_items.first
+    @collection = Collection.order(:position).with_at_least_n_items.first
     render :show
   end
 
@@ -25,7 +25,7 @@ class CollectionController < ApplicationController
 
   # GET /shops
   def shops
-    @shops = Collection.where("etsy_shop_meta IS NOT NULL").with_at_least_n_items
+    @shops = Collection.order(:position).where("etsy_shop_meta IS NOT NULL").with_at_least_n_items
     
     respond_to do |format|
       format.html { render :shops }

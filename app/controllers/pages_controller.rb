@@ -10,7 +10,7 @@ class PagesController < ApplicationController
   end
 
   def nav_setup
-    @collections = Collection.includes(:items => :photos).all
-    @items = Item.includes(:collections).includes(:photos).all
+    @collections = Collection.order(:position).where("etsy_shop_meta IS NULL")
+    @featured_collection = Collection.order(:position).with_at_least_n_items.first
   end
 end

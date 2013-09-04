@@ -1,4 +1,5 @@
 class Shop < Collection
+
   before_destroy {
     self.items.each do |item|
       item.destroy
@@ -44,5 +45,10 @@ class Shop < Collection
         new_item.save
       end
     end
+  end
+
+  # doing this to prevent ActiveAdmin from messing up jQuery serialization.
+  def self.model_name
+    ActiveModel::Name.new(Collection)
   end
 end

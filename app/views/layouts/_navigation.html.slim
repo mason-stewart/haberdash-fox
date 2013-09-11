@@ -8,9 +8,8 @@ ul.nav-list
     a href="/shops" Shops
 
   - @collections.each_with_index do |collection, index|
-    - unless index == 0
-      li
-        = link_to collection.title, '/collection/'+collection.slug
+    li
+      = link_to collection.title, '/collection/'+collection.slug
 
   ul.submenu 
     li

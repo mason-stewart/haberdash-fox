@@ -1,6 +1,5 @@
 - if window.location.pathname == '/'
-  a href="/walnut-studiolo" data-bypass=""
-    img src='/assets/walnut.jpg' class="slogan"
+    img src='/assets/holiday.jpg' class="slogan"
 
 - unless window.location.pathname == '/'
   - if @etsy_shop_meta?.User?.Profile?.image_url_75x75?

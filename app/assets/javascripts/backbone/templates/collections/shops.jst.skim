@@ -1,5 +1,5 @@
 - if window.location.pathname == '/'
-  img src='/assets/holiday.jpg' class="slogan"
+  img src='/assets/under50.jpg' class="slogan"
 
 h1 Shops
 

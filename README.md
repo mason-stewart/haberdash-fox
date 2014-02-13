@@ -57,3 +57,28 @@ This app comes with a rake task (`rake remove_old_items`) that can be called fro
 
 ### Deployment
 The Haberdash Fox was built to run on [Heroku](http://heroku.com), and as such is very simple to deploy. Assuming you alredy have a Heroku account and the Heroku toolkit setup, you'll just need to run `heroku create` copy your ENV vars from `.env` manually, or use the [heroku-config](https://github.com/ddollar/heroku-config) tool to copy them automagically. Don't forget to do `heroku run rake db:setup` after your first deploy, and *please remember to change the default username/password*!
+
+
+### License
+
+The Haberdash Fox is licensed under the The MIT License (MIT)
+
+Copyright (c) 2012-2014 [Marco Suarez](https://twitter.com/marcosuarez), [Mason Stewart](https://twitter.com/masondesu)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.

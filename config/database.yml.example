@@ -1,0 +1,23 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: haberdash_development
+  pool: 5
+  username: haberdash
+  password:
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: haberdash_test
+  pool: 5
+  username: haberdash
+  password:
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: haberdash_production
+  pool: 5
+  username: haberdash
+  password:

@@ -38,6 +38,10 @@ Once you've cloned this project, you'll need these two steps first
 
 After this, you can start Postgres and run the server with `unicorn`.
 
+### Creating Items, Collections, and Shops
+
+![A screenshot of the way cool backend interface](http://f.cl.ly/items/2Z3I3E0O2h0E3a3e1q1I/Screen%20Shot%202014-02-13%20at%202.15.50%20PM.png)
+
 You'll want first head to http://0.0.0.0:8080/admin first and add some items. The default username and password for the ActiveAdmin backend are "admin@example.com" and "password", respectively. You should change these under the "Admin Users" section of the backend *immediately*.
 
 Next create a new Collection under the "Collections" section. You'll find the "New Collection" button in the top right of that page. 

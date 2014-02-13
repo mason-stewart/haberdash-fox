@@ -18,8 +18,8 @@ Although [http://thehaberdashfox.com](http://thehaberdashfox.com) is still up, w
 
 Consider The Haberdash Fox not a great piece of engineering, for it most certainly is not. But as the record of two good friends hacking together on a project **simply for the love building**, it will, I hope, be of some encouragement to others.
 
-Mason Stewart
-February 13th, 2014
+Mason Stewart <br />
+February 13th, 2014 <br />
 Greenville, SC
 
 ### Installation

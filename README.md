@@ -1,6 +1,6 @@
 # The Haberdash Fox
 
-## Create and show custom collections of items from the [Etsy](http://www.etsy.com) API.
+## Custom collections of items from the [Etsy](http://www.etsy.com) API.
 
 ![A cool screenshot of The Haberdash Fox](http://f.cl.ly/items/3c3q0G0g0s3I2E3I1p3n/Screen%20Shot%202014-02-13%20at%2012.32.57%20PM.png)
 

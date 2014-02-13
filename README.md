@@ -16,7 +16,7 @@ It should be noted that Etsy's API had no mechanism, such as affiliate links, by
 
 Although [http://thehaberdashfox.com](http://thehaberdashfox.com) is still up, we've scaled down to a single Heroku dyno and aren't actively developing new features. I think that Marco and I found at least a glimpse of the Holy Grail of software: feature-completeness. While there are certainly bugs to be fixed, specs to be written, and sloppy code to be refactored, we're satisfied with the features that exist. With that being said, we'll gladly review pull requests, bug fixes, and the like. 
 
-Consider The Haberdash Fox not a great piece of engineering, for it most certainly is not. But as the record of two good friends hacking together on a project **simply for the love building**, it will, I hope, be of some encouragement to others.
+Consider The Haberdash Fox not a great piece of engineering, for it most certainly is not. But as the record of two good friends hacking together on a project *simply for the love building*, it will, I hope, be of some encouragement to others.
 
 Mason Stewart <br />
 February 13th, 2014 <br />
@@ -34,7 +34,7 @@ Once you've cloned this project, you'll need these two steps first
 * Run `bundle install`
 * Rename `config/database.yml.example` to `config/database.yml` and fill in whatever values you prefer/need
 * Run `rake db:setup`
-* Rename `.env.example` to `.env` and *YOU MUST* change each of the values. You can get the Etsy API keys by creating a developer account and registering your app at [http://www.etsy.com/developers](http://www.etsy.com/developers). To generate a new Rails secret token, you can just run `rake secret` in the app's folder and copy the result into your .env file.
+* Rename `.env.example` to `.env` and **you must** change each of the values. You can get the Etsy API keys by creating a developer account and registering your app at [http://www.etsy.com/developers](http://www.etsy.com/developers). To generate a new Rails secret token, you can just run `rake secret` in the app's folder and copy the result into your .env file.
 
 After this, you can start Postgres and run the server with `unicorn`.
 
@@ -42,11 +42,11 @@ After this, you can start Postgres and run the server with `unicorn`.
 
 ![A screenshot of the way cool backend interface](http://f.cl.ly/items/2Z3I3E0O2h0E3a3e1q1I/Screen%20Shot%202014-02-13%20at%202.15.50%20PM.png)
 
-You'll want first head to http://0.0.0.0:8080/admin first and add some items. The default username and password for the ActiveAdmin backend are "admin@example.com" and "password", respectively. You should change these under the "Admin Users" section of the backend *immediately*.
+You'll want first head to http://0.0.0.0:8080/admin first and add some items. The default username and password for the ActiveAdmin backend are "admin@example.com" and "password", respectively. You should change these under the "Admin Users" section of the backend **immediately**.
 
 Next create a new Collection under the "Collections" section. You'll find the "New Collection" button in the top right of that page. 
 
-After this, you'll be able to add new Items. In the "Items" section, click "New Item". *Select a Collection in the multiselect, and then you'll only need to paste in an Etsy ID. The rest of the data will be slurped in automatically.*
+After this, you'll be able to add new Items. In the "Items" section, click "New Item". **Select a Collection in the multiselect, and then you'll only need to paste in an Etsy ID. The rest of the data will be slurped in automatically.**
 
 Now when you visit the app at http://0.0.0.0:8080, you'll see a single collection and your new item in it. Repeat this until you have as many Items and Collections as you wish!
 
@@ -56,7 +56,7 @@ Shops behave similarly. Simply paste in an Etsy Shop Name (the owner's Etsy user
 This app comes with a rake task (`rake remove_old_items`) that can be called from the Heroku Scheduler (or some cron-like). As the name indicates, it will hit the Etsy API and check the status of items, and remove from the app's database any items that are no longer for sale on Etsy. If your server is beefy, you may end up going over the Etsy API rate limit. Etsy will email you if you do :D
 
 ### Deployment
-The Haberdash Fox was built to run on [Heroku](http://heroku.com), and as such is very simple to deploy. Assuming you alredy have a Heroku account and the Heroku toolkit setup, you'll just need to run `heroku create` copy your ENV vars from `.env` manually, or use the [heroku-config](https://github.com/ddollar/heroku-config) tool to copy them automagically. Don't forget to do `heroku run rake db:setup` after your first deploy, and *please remember to change the default username/password*!
+The Haberdash Fox was built to run on [Heroku](http://heroku.com), and as such is very simple to deploy. Assuming you alredy have a Heroku account and the Heroku toolkit setup, you'll just need to run `heroku create` copy your ENV vars from `.env` manually, or use the [heroku-config](https://github.com/ddollar/heroku-config) tool to copy them automagically. Don't forget to do `heroku run rake db:setup` after your first deploy, and **please remember to change the default username and password**!
 
 
 ### License

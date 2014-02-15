@@ -36,7 +36,7 @@ Once you've cloned this project, you'll need these two steps first
 * Run `rake db:setup`
 * Rename `.env.example` to `.env` and **you must** change each of the values. You can get the Etsy API keys by creating a developer account and registering your app at [http://www.etsy.com/developers](http://www.etsy.com/developers). To generate a new Rails secret token, you can just run `rake secret` in the app's folder and copy the result into your .env file.
 
-After this, you can start Postgres and run the server with `foreman start`.
+After this, you can start Postgres and run the server with `foreman start`. Please note that if you use `rails s` or `unicorn` without the `foreman` command, your ENV vars in `.env` won't be loaded. If you're going to be inside the Rails Console, make sure to run it with `foreman run rails c`, which will run it in the context of your `.env` file.
 
 ### Creating Items, Collections, and Shops
 

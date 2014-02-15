@@ -36,19 +36,19 @@ Once you've cloned this project, you'll need these two steps first
 * Run `rake db:setup`
 * Rename `.env.example` to `.env` and **you must** change each of the values. You can get the Etsy API keys by creating a developer account and registering your app at [http://www.etsy.com/developers](http://www.etsy.com/developers). To generate a new Rails secret token, you can just run `rake secret` in the app's folder and copy the result into your .env file.
 
-After this, you can start Postgres and run the server with `unicorn`.
+After this, you can start Postgres and run the server with `foreman start`.
 
 ### Creating Items, Collections, and Shops
 
 ![A screenshot of the way cool backend interface](http://f.cl.ly/items/2Z3I3E0O2h0E3a3e1q1I/Screen%20Shot%202014-02-13%20at%202.15.50%20PM.png)
 
-You'll want first head to http://0.0.0.0:8080/admin first and add some items. The default username and password for the ActiveAdmin backend are "admin@example.com" and "password", respectively. You should change these under the "Admin Users" section of the backend **immediately**.
+You'll want first head to http://0.0.0.0:5000/admin first and add some items. The default username and password for the ActiveAdmin backend are "admin@example.com" and "password", respectively. You should change these under the "Admin Users" section of the backend **immediately**.
 
 Next create a new Collection under the "Collections" section. You'll find the "New Collection" button in the top right of that page. 
 
 After this, you'll be able to add new Items. In the "Items" section, click "New Item". **Select a Collection in the multiselect, and then you'll only need to paste in an Etsy ID. The rest of the data will be slurped in automatically.**
 
-Now when you visit the app at http://0.0.0.0:8080, you'll see a single collection and your new item in it. Repeat this until you have as many Items and Collections as you wish!
+Now when you visit the app at http://0.0.0.0:5000, you'll see a single collection and your new item in it. Repeat this until you have as many Items and Collections as you wish!
 
 Shops behave similarly. Simply paste in an Etsy Shop Name (the owner's Etsy username), and all of the items from that shop will be added. Be careful with large shops, this operation will grab **everything**!
 

@@ -22,8 +22,9 @@ gem "compass-rails"
 gem "rails-backbone"
 gem "skim"
 gem "temple", "0.4.0"
-gem 'bldr'
-gem 'oj'
+gem "bldr"
+gem "oj"
+gem "foreman"
 
 group :assets do
   gem "coffee-rails", "~> 3.2.1"
@@ -31,9 +32,9 @@ group :assets do
 end
 
 group :development do
-  gem 'database_cleaner'
-  gem 'guard-rspec'
-  gem 'rb-fsevent', '~> 0.9'
-  gem 'terminal-notifier-guard'
+  gem "database_cleaner"
+  gem "guard-rspec"
+  gem "rb-fsevent", "~> 0.9"
+  gem "terminal-notifier-guard"
   gem "bullet"
 end

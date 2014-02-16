@@ -89,7 +89,7 @@ GEM
       mail (~> 2.2)
       rspec (~> 2.0)
     erubis (2.7.0)
-    etsy (0.2.1)
+    etsy (0.2.5)
       json (>= 1.5.0)
       oauth (~> 0.4.0)
     execjs (1.4.0)
@@ -281,7 +281,7 @@ DEPENDENCIES
   compass-rails
   database_cleaner
   email_spec (>= 1.2.1)
-  etsy
+  etsy (>= 0.2.5)
   factory_girl_rails (>= 4.1.0)
   foreman
   guard-rspec

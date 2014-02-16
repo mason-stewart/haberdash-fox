@@ -17,7 +17,7 @@ gem "quiet_assets", ">= 1.0.1", :group => :development
 gem "activeadmin"
 gem "sass-rails"
 gem "meta_search", ">= 1.1.0.pre"
-gem "etsy"
+gem "etsy", ">= 0.2.5"
 gem "compass-rails"
 gem "rails-backbone"
 gem "skim"

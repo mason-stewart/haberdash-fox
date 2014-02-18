@@ -4,6 +4,7 @@ gem "rails", "3.2.16"
 gem "jquery-rails"
 gem "unicorn", ">= 4.3.1"
 gem "pg", ">= 0.14.1"
+gem "sqlite3"
 gem "haml", ">= 3.1.6", :group => :development
 gem "haml-rails", ">= 0.3.5", :group => :development
 gem "hpricot", ">= 0.8.6", :group => :development

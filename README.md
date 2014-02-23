@@ -50,7 +50,7 @@ After this, you'll be able to add new Items. In the "Items" section, click "New 
 
 Now when you visit the app at http://0.0.0.0:5000, you'll see a single collection and your new item in it. Repeat this until you have as many Items and Collections as you wish!
 
-Shops behave similarly. Simply paste in an Etsy Shop Name (the owner's Etsy username), and all of the items from that shop will be added. Be careful with large shops, this operation will grab **everything**!
+Shops behave similarly. Click on "Shops" in the menu, then "New Shop" and simply paste in an Etsy Shop Name (the owner's Etsy username), and all of the items from that shop will be added. Be careful with large shops, this operation will grab **everything**!
 
 ### Maintenance
 This app comes with a rake task (`rake remove_old_items`) that can be called from the Heroku Scheduler (or some cron-like). As the name indicates, it will hit the Etsy API and check the status of items, and remove from the app's database any items that are no longer for sale on Etsy. If your server is beefy, you may end up going over the Etsy API rate limit. Etsy will email you if you do :D

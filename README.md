@@ -56,7 +56,7 @@ Shops behave similarly. Click on "Shops" in the menu, then "New Shop" and simply
 This app comes with a rake task (`rake db:remove_old_items`) that can be called from the Heroku Scheduler (or some cron-like). As the name indicates, it will hit the Etsy API and check the status of items, and remove from the app's database any items that are no longer for sale on Etsy. If your server is beefy, you may end up going over the Etsy API rate limit. Etsy will email you if you do :D
 
 ### Deployment
-The Haberdash Fox was built to run on [Heroku](http://heroku.com), and as such is very simple to deploy. Assuming you alredy have a Heroku account and the Heroku toolkit setup, you'll just need to run `heroku create` copy your ENV vars from `.env` manually, or use the [heroku-config](https://github.com/ddollar/heroku-config) tool to copy them automagically. Don't forget to do `heroku run rake db:setup` after your first deploy, and **please remember to change the default username and password**!
+The Haberdash Fox was built to run on [Heroku](http://heroku.com), and as such is very simple to deploy. Assuming you already have a Heroku account and the Heroku toolkit setup, you'll just need to run `heroku create`, copy your ENV vars from `.env` manually, or use the [heroku-config](https://github.com/ddollar/heroku-config) tool to copy them automagically. Don't forget to do `heroku run rake db:setup` after your first deploy, and **please remember to change the default username and password**!
 
 
 ### License

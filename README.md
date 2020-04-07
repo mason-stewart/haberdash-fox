@@ -14,7 +14,7 @@ Regardless of the fact that we'd do it all completely differently if we had to d
 
 It should be noted that Etsy's API had no mechanism, such as affiliate links, by which we could ever have made money. For a few weeks we beta-tested the idea of featuring a few sellers' entire Etsy shops and charging each shop owner a small monthly fee. Unfortunately, there simply weren't enough conversions (or even an exact way to measure them) and we went back to the "labor of love" business model of just doing this because we love it.
 
-Although [http://thehaberdashfox.com](http://thehaberdashfox.com) is still up, we've scaled down to a single Heroku dyno and aren't actively developing new features. I think that Marco and I found at least a glimpse of the Holy Grail of software: feature-completeness. While there are certainly bugs to be fixed, specs to be written, and sloppy code to be refactored, we're satisfied with the features that exist. With that being said, we'll gladly review pull requests, bug fixes, and the like. 
+I think that Marco and I found at least a glimpse of the Holy Grail of software: feature-completeness. While there are certainly bugs to be fixed, specs to be written, and sloppy code to be refactored, we're satisfied with the features that exist. With that being said, we'll gladly review pull requests, bug fixes, and the like. 
 
 Consider The Haberdash Fox not a great piece of engineering, for it most certainly is not. But as the record of two good friends hacking together on a project *simply for the love building*, it will, I hope, be of some encouragement to others.
 
